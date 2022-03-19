@@ -1,17 +1,20 @@
 {
-  "name": "v4",
-  "description": "Personal Website V4",
+  "name": "bartvanzeist_portfolio",
+  "description": "Bart van Zeist Portfolio",
   "version": "1.0.0",
-  "author": "Brittany Chiang <brittany.chiang@gmail.com>",
+  "author": "Bart van Zeist <bartvanzeist2000@gmail.com>",
   "repository": {
     "type": "git",
-    "url": "https://github.com/bchiang7/v4"
+    "url": "https://github.com/BPHvZ/bartvanzeist_portfolio"
   },
   "keywords": [
     "gatsby"
   ],
   "license": "MIT",
-  "browserslist": "> 0.25%, not dead",
+  "browserslist": [
+    "> 0.25%",
+    "not dead"
+  ],
   "scripts": {
     "build": "gatsby build",
     "develop": "gatsby develop",
