@@ -3717,7 +3717,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:*, @types/node@npm:>=10.0.0, @types/node@npm:^17.0.21, @types/node@npm:^17.0.5":
+"@types/node@npm:*, @types/node@npm:>=10.0.0, @types/node@npm:^17.0.23, @types/node@npm:^17.0.5":
   version: 17.0.23
   resolution: "@types/node@npm:17.0.23"
   checksum: a3517554737cbb042e76c30d0e5482192ac4d9bea0eeb086e2622d9cabf460a0eb52a696b99fcd18e7fcc93c96db6cc7ae507f6608f256ef0b5c1d8c87a5a470
@@ -3823,7 +3823,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react@npm:*, @types/react@npm:^17.0.41":
+"@types/react@npm:*, @types/react@npm:^17.0.43":
   version: 17.0.43
   resolution: "@types/react@npm:17.0.43"
   dependencies:
@@ -5147,7 +5147,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"babel-preset-gatsby@npm:^2.10.0, babel-preset-gatsby@npm:^2.10.1":
+"babel-preset-gatsby@npm:^2.10.1":
   version: 2.10.1
   resolution: "babel-preset-gatsby@npm:2.10.1"
   dependencies:
@@ -5224,11 +5224,11 @@ __metadata:
     "@types/babel__core": ^7.1.19
     "@types/gatsby-transformer-remark": ^2.9.1
     "@types/lodash": ^4.14.180
-    "@types/node": ^17.0.21
+    "@types/node": ^17.0.23
     "@types/prettier": ^2.4.4
     "@types/prismjs": ^1.26.0
     "@types/prop-types": ^15.7.4
-    "@types/react": ^17.0.41
+    "@types/react": ^17.0.43
     "@types/react-dom": ^17.0.14
     "@types/react-helmet": ^6.1.5
     "@types/react-transition-group": ^4.4.4
@@ -5240,33 +5240,33 @@ __metadata:
     "@upstatement/prettier-config": ^1.0.0
     animejs: ^3.2.1
     babel-plugin-styled-components: ^2.0.6
-    babel-preset-gatsby: ^2.10.0
+    babel-preset-gatsby: ^2.10.1
     eslint: ^8.11.0
     eslint-config-google: ^0.14.0
     eslint-plugin-react: ^7.29.4
-    gatsby: ^4.10.1
+    gatsby: ^4.10.3
     gatsby-plugin-google-analytics: ^4.10.0
     gatsby-plugin-graphql-codegen: ^3.1.1
-    gatsby-plugin-image: ^2.10.0
-    gatsby-plugin-manifest: ^4.10.1
+    gatsby-plugin-image: ^2.10.1
+    gatsby-plugin-manifest: ^4.10.2
     gatsby-plugin-netlify: ^4.1.0
-    gatsby-plugin-offline: ^5.10.1
+    gatsby-plugin-offline: ^5.10.2
     gatsby-plugin-react-helmet: ^5.10.0
     gatsby-plugin-robots-txt: ^1.7.0
-    gatsby-plugin-sharp: ^4.10.1
-    gatsby-plugin-sitemap: ^5.10.1
+    gatsby-plugin-sharp: ^4.10.2
+    gatsby-plugin-sitemap: ^5.10.2
     gatsby-plugin-styled-components: ^5.10.0
     gatsby-remark-code-titles: ^1.1.0
     gatsby-remark-external-links: ^0.0.4
-    gatsby-remark-images: ^6.10.1
+    gatsby-remark-images: ^6.10.2
     gatsby-remark-prismjs: ^6.10.0
-    gatsby-source-filesystem: ^4.10.0
-    gatsby-transformer-remark: ^5.10.1
+    gatsby-source-filesystem: ^4.10.1
+    gatsby-transformer-remark: ^5.10.2
     gatsby-transformer-sharp: ^4.10.0
     husky: ^7.0.4
     lint-staged: ^12.3.7
     lodash: ^4.17.21
-    prettier: ^2.6.0
+    prettier: ^2.6.1
     prismjs: ^1.27.0
     prop-types: ^15.8.1
     react: ^17.0.2
@@ -5274,8 +5274,8 @@ __metadata:
     react-helmet: ^6.1.0
     react-transition-group: ^4.4.2
     scrollreveal: ^4.0.9
-    styled-components: ^5.3.3
-    typescript: ^4.6.2
+    styled-components: ^5.3.5
+    typescript: ^4.6.3
   languageName: unknown
   linkType: soft
 
@@ -8876,7 +8876,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"gatsby-plugin-image@npm:^2.10.0":
+"gatsby-plugin-image@npm:^2.10.1":
   version: 2.10.1
   resolution: "gatsby-plugin-image@npm:2.10.1"
   dependencies:
@@ -8904,7 +8904,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"gatsby-plugin-manifest@npm:^4.10.1":
+"gatsby-plugin-manifest@npm:^4.10.2":
   version: 4.10.2
   resolution: "gatsby-plugin-manifest@npm:4.10.2"
   dependencies:
@@ -8935,7 +8935,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"gatsby-plugin-offline@npm:^5.10.1":
+"gatsby-plugin-offline@npm:^5.10.2":
   version: 5.10.2
   resolution: "gatsby-plugin-offline@npm:5.10.2"
   dependencies:
@@ -8999,7 +8999,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"gatsby-plugin-sharp@npm:^4.10.1":
+"gatsby-plugin-sharp@npm:^4.10.2":
   version: 4.10.2
   resolution: "gatsby-plugin-sharp@npm:4.10.2"
   dependencies:
@@ -9028,7 +9028,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"gatsby-plugin-sitemap@npm:^5.10.1":
+"gatsby-plugin-sitemap@npm:^5.10.2":
   version: 5.10.2
   resolution: "gatsby-plugin-sitemap@npm:5.10.2"
   dependencies:
@@ -9130,7 +9130,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"gatsby-remark-images@npm:^6.10.1":
+"gatsby-remark-images@npm:^6.10.2":
   version: 6.10.2
   resolution: "gatsby-remark-images@npm:6.10.2"
   dependencies:
@@ -9176,7 +9176,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"gatsby-source-filesystem@npm:^4.10.0":
+"gatsby-source-filesystem@npm:^4.10.1":
   version: 4.10.1
   resolution: "gatsby-source-filesystem@npm:4.10.1"
   dependencies:
@@ -9219,7 +9219,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"gatsby-transformer-remark@npm:^5.10.1":
+"gatsby-transformer-remark@npm:^5.10.2":
   version: 5.10.2
   resolution: "gatsby-transformer-remark@npm:5.10.2"
   dependencies:
@@ -9280,7 +9280,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"gatsby@npm:^4.10.1":
+"gatsby@npm:^4.10.3":
   version: 4.10.3
   resolution: "gatsby@npm:4.10.3"
   dependencies:
@@ -14471,7 +14471,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"prettier@npm:^2.6.0":
+"prettier@npm:^2.6.1":
   version: 2.6.1
   resolution: "prettier@npm:2.6.1"
   bin:
@@ -16662,7 +16662,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"styled-components@npm:^5.3.3":
+"styled-components@npm:^5.3.5":
   version: 5.3.5
   resolution: "styled-components@npm:5.3.5"
   dependencies:
@@ -17345,7 +17345,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typescript@npm:^4.6.2":
+"typescript@npm:^4.6.3":
   version: 4.6.3
   resolution: "typescript@npm:4.6.3"
   bin:
@@ -17365,7 +17365,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typescript@patch:typescript@^4.6.2#~builtin<compat/typescript>":
+"typescript@patch:typescript@^4.6.3#~builtin<compat/typescript>":
   version: 4.6.3
   resolution: "typescript@patch:typescript@npm%3A4.6.3#~builtin<compat/typescript>::version=4.6.3&hash=bda367"
   bin:
