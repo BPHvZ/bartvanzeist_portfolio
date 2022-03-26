@@ -29,7 +29,7 @@ interface SideProps {
   orientation: string;
 }
 
-const Side: React.FC<SideProps> = ({children, isHome, orientation}) => {
+const Side = ({isHome, orientation, children}: SideProps) => {
   const [isMounted, setIsMounted] = useState(!isHome);
   const prefersReducedMotion = usePrefersReducedMotion();
 

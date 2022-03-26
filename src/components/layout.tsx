@@ -1,8 +1,8 @@
-import React, {useEffect, useState} from 'react';
+import React, {ReactNode, useEffect, useState} from 'react';
 import styled, {ThemeProvider} from 'styled-components';
 import {Email, Footer, Head, Loader, Nav, Social} from '../components';
 import {GlobalStyle, theme} from '../styles';
-import {UrlObject} from 'url';
+import {WindowLocation} from '@reach/router';
 
 const StyledContent = styled.div`
   display: flex;
@@ -11,11 +11,11 @@ const StyledContent = styled.div`
 `;
 
 interface LayoutProps {
-  children: React.ReactNode;
-  location: UrlObject;
+  children: ReactNode;
+  location: WindowLocation;
 }
 
-const Layout: React.FC<LayoutProps> = ({children, location}) => {
+const Layout = ({children, location}: LayoutProps) => {
   const isHome: boolean = location.pathname === '/';
   const [isLoading, setIsLoading] = useState(isHome);
 

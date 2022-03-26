@@ -17,7 +17,7 @@ const StyledLoader = styled.div<StyledLoaderProps>`
   right: 0;
   width: 100%;
   height: 100%;
-  background-color: var(--dark-navy);
+  background-color: var(--oxford-blue);
   z-index: 99;
 
   .logo-wrapper {
@@ -43,7 +43,7 @@ interface LoaderProps {
   finishLoading: Function,
 }
 
-const Loader: React.FC<LoaderProps> = ({finishLoading}) => {
+const Loader = ({finishLoading}: LoaderProps) => {
   const [isMounted, setIsMounted] = useState(false);
 
   const animate = () => {

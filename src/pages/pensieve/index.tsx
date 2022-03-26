@@ -5,8 +5,8 @@ import {Helmet} from 'react-helmet';
 import styled from 'styled-components';
 import {Layout} from '../../components';
 import {IconBookmark} from '../../components/icons';
-import {UrlObject} from 'url';
 import {PostsQuery} from '../../../graphql-types';
+import {WindowLocation} from '@reach/router';
 
 const StyledMainContainer = styled.main`
   & > header {
@@ -69,7 +69,7 @@ const StyledPost = styled.li`
     padding: 2rem 1.75rem;
     border-radius: var(--border-radius);
     transition: var(--transition);
-    background-color: var(--light-navy);
+    background-color: var(--oxford-blue-light);
 
     header,
     a {
@@ -79,7 +79,7 @@ const StyledPost = styled.li`
 
   .post__icon {
     ${({theme}) => theme.mixins.flexBetween};
-    color: var(--green);
+    color: var(--radical-red);
     margin-bottom: 30px;
     margin-left: -5px;
 
@@ -131,7 +131,7 @@ const StyledPost = styled.li`
     list-style: none;
 
     li {
-      color: var(--green);
+      color: var(--radical-red);
       font-family: var(--font-mono);
       font-size: var(--fz-xxs);
       line-height: 1.75;
@@ -144,11 +144,11 @@ const StyledPost = styled.li`
 `;
 
 interface PensievePageProps {
-  location: UrlObject;
+  location: WindowLocation;
   data: PostsQuery
 }
 
-const PensievePage: React.FC<PensievePageProps> = ({location, data}) => {
+const PensievePage = ({data, location}: PensievePageProps) => {
   const posts = data.allMarkdownRemark.edges;
 
   return (

@@ -3635,16 +3635,21 @@ export type Unnamed_1_QueryVariables = Exact<{ [key: string]: never; }>;
 
 export type Unnamed_1_Query = { allMarkdownRemark: { group: Array<{ fieldValue?: string | null, totalCount: number }> } };
 
-export type Unnamed_2_QueryVariables = Exact<{
+export type PageQueryVariables = Exact<{
   path: Scalars['String'];
 }>;
 
 
-export type Unnamed_2_Query = { markdownRemark?: { html?: string | null, frontmatter?: { title?: string | null, description?: string | null, date?: string | null, slug?: string | null, tags?: Array<string | null> | null } | null } | null };
+export type PageQuery = { markdownRemark?: { html?: string | null, frontmatter?: { title?: string | null, description?: string | null, date?: string | null, slug?: string | null, tags?: Array<string | null> | null } | null } | null };
 
-export type Unnamed_3_QueryVariables = Exact<{
+export type TagPageQueryVariables = Exact<{
   tag: Scalars['String'];
 }>;
 
 
-export type Unnamed_3_Query = { allMarkdownRemark: { totalCount: number, edges: Array<{ node: { frontmatter?: { title?: string | null, description?: string | null, date?: string | null, slug?: string | null, tags?: Array<string | null> | null } | null } }> } };
+export type TagPageQuery = { allMarkdownRemark: { totalCount: number, edges: Array<{ node: { frontmatter?: { title?: string | null, description?: string | null, date?: string | null, slug?: string | null, tags?: Array<string | null> | null } | null } }> } };
+
+export type Unnamed_2_QueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type Unnamed_2_Query = { postsRemark: { edges: Array<{ node: { frontmatter?: { slug?: string | null } | null } }> }, tagsGroup: { group: Array<{ fieldValue?: string | null }> } };

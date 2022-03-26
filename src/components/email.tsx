@@ -38,7 +38,7 @@ export type EmailProps = {
   isHome: boolean;
 };
 
-const Email: React.FC<EmailProps> = ({isHome}) => (
+const Email = ({isHome}: EmailProps) => (
   <Side isHome={isHome} orientation="right">
     <StyledLinkWrapper>
       <a href={`mailto:${email}`}>{email}</a>

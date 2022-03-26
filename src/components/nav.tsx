@@ -21,7 +21,7 @@ const StyledHeader = styled.header<StyledHeaderProps>`
   padding: 0px 50px;
   width: 100%;
   height: var(--nav-height);
-  background-color: rgba(10, 25, 47, 0.85);
+  background-color: var(--oxford-blue-nav);
   filter: none !important;
   pointer-events: auto !important;
   user-select: auto !important;
@@ -42,7 +42,7 @@ const StyledHeader = styled.header<StyledHeaderProps>`
       css`
         height: var(--nav-scroll-height);
         transform: translateY(0px);
-        background-color: rgba(10, 25, 47, 0.85);
+        background-color: var(--oxford-blue-nav);
         box-shadow: 0 10px 30px -10px var(--navy-shadow);
       `};
 
@@ -70,14 +70,14 @@ const StyledNav = styled.nav`
     ${({theme}) => theme.mixins.flexCenter};
 
     a {
-      color: var(--green);
+      color: var(--radical-red);
       width: 42px;
       height: 42px;
 
       &:hover,
       &:focus {
         svg {
-          fill: var(--green-tint);
+          fill: var(--radical-red-tint);
         }
       }
 
@@ -116,7 +116,7 @@ const StyledLinks = styled.div`
         &:before {
           content: '0' counter(item) '.';
           margin-right: 5px;
-          color: var(--green);
+          color: var(--radical-red);
           font-size: var(--fz-xxs);
           text-align: right;
         }
@@ -135,7 +135,7 @@ interface NavProps {
   isHome: boolean;
 }
 
-const Nav: React.FC<NavProps> = ({isHome}) => {
+const Nav = ({isHome}: NavProps) => {
   const [isMounted, setIsMounted] = useState(!isHome);
   const scrollDirection = useScrollDirection('down');
   const [scrolledToTop, setScrolledToTop] = useState(true);

@@ -2,20 +2,21 @@ import {css} from 'styled-components';
 
 const variables = css`
   :root {
-    --dark-navy: #020c1b;
-    --navy: #0a192f;
-    --light-navy: #112240;
-    --lightest-navy: #233554;
-    --navy-shadow: rgba(2, 12, 27, 0.7);
-    --dark-slate: #495670;
-    --slate: #8892b0;
-    --light-slate: #a8b2d1;
-    --lightest-slate: #ccd6f6;
-    --white: #e6f1ff;
-    --green: #64ffda;
-    --green-tint: rgba(100, 255, 218, 0.1);
-    --pink: #f57dff;
-    --blue: #57cbff;
+    --dark-slate: rgb(100 116 139);
+    --slate: rgb(203 213 225);
+    --light-slate: rgb(226 232 240);
+    --lightest-slate: rgb(241 245 249);
+
+    --oxford-blue: rgba(4, 27, 45, 1); //041b2d
+    --oxford-blue-nav: rgba(4, 27, 45, 0.85);
+    --oxford-blue-light: #073151;
+    --oxford-blue-lightest: #0a4675;
+    --oxford-blue-shadow: rgba(2,16,27, 0.7);
+    --radical-red: rgba(255, 51, 102, 1); //ff3366
+    --radical-red-tint: rgba(255, 51, 102, 0.1);
+    --tiffany-blue: rgba(46, 196, 182, 1); //2ec4b6
+    --cultured: rgba(246, 247, 248, 1); //f6f7f8
+    --blue-jeans: rgba(32, 164, 243, 1); //20a4f3
 
     --font-sans: 'Calibre', 'Inter', 'San Francisco', 'SF Pro Text', -apple-system, system-ui,
       sans-serif;

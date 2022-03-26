@@ -1,17 +1,17 @@
 import React from 'react';
 import styled from 'styled-components';
 import {About, Contact, Featured, Hero, Jobs, Layout, Projects} from '../components';
-import {UrlObject} from 'url';
+import {WindowLocation} from '@reach/router';
 
 const StyledMainContainer = styled.main`
   counter-reset: section;
 `;
 
 interface IndexPageProps {
-  location: UrlObject;
+  location: WindowLocation;
 }
 
-const IndexPage: React.FC<IndexPageProps> = ({location}) => (
+const IndexPage = ({location}: IndexPageProps) => (
   <Layout location={location}>
     <StyledMainContainer className="fillHeight">
       <Hero />

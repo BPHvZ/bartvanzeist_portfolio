@@ -7,8 +7,8 @@ import sr from '../utils/sr';
 import {Layout} from '../components';
 import {Icon} from '../components/icons';
 import {usePrefersReducedMotion} from '../hooks';
-import {UrlObject} from 'url';
 import {ProjectsQuery} from '../../graphql-types';
+import {WindowLocation} from '@reach/router';
 
 const StyledTableContainer = styled.div`
   margin: 100px -20px;
@@ -30,7 +30,7 @@ const StyledTableContainer = styled.div`
     tbody tr {
       &:hover,
       &:focus {
-        background-color: var(--light-navy);
+        background-color: var(--oxford-blue-light);
       }
     }
 
@@ -131,11 +131,11 @@ const StyledTableContainer = styled.div`
 `;
 
 interface ArchivePageProps {
-  location: UrlObject;
   data: ProjectsQuery;
+  location: WindowLocation
 }
 
-const ArchivePage: React.FC<ArchivePageProps> = ({location, data}) => {
+const ArchivePage = ({data, location}: ArchivePageProps) => {
   const projects = data.allMarkdownRemark.edges;
   const revealTitle = useRef(null);
   const revealTable = useRef(null);
@@ -175,11 +175,11 @@ const ArchivePage: React.FC<ArchivePageProps> = ({location, data}) => {
             </thead>
             <tbody>
               {projects.length > 0 &&
-                projects.map(({node}, i) => {
+                projects.map(({node}, nodeIndex) => {
                   const {date, github, external, ios, android, title, tech, company} =
                     node.frontmatter!;
                   return (
-                    <tr key={i} ref={(el) => (revealProjects.current[i] = el!)}>
+                    <tr key={nodeIndex} ref={(el) => (revealProjects.current[nodeIndex] = el!)}>
                       <td className="overline year">{`${new Date(date!).getFullYear()}`}</td>
 
                       <td className="title">{title}</td>
@@ -190,11 +190,11 @@ const ArchivePage: React.FC<ArchivePageProps> = ({location, data}) => {
 
                       <td className="tech hide-on-mobile">
                         {tech!.length > 0 &&
-                          tech!.map((item, i) => (
-                            <span key={i}>
+                          tech!.map((item, itemIndex) => (
+                            <span key={itemIndex}>
                               {item}
                               {''}
-                              {i !== tech!.length - 1 && <span className="separator">&middot;</span>}
+                              {itemIndex !== tech!.length - 1 && <span className="separator">&middot;</span>}
                             </span>
                           ))}
                       </td>

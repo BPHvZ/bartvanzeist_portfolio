@@ -12,7 +12,7 @@ interface HeadProps {
   image?: string;
 }
 
-const Head: React.FC<HeadProps> = ({title, description, image}) => {
+const Head = ({title, description, image}: HeadProps) => {
   const {pathname} = useLocation();
 
   const {site} = useStaticQuery<SiteQuery>(

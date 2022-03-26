@@ -46,7 +46,7 @@ interface SocialProps {
   isHome: boolean;
 }
 
-const Social: React.FC<SocialProps> = ({isHome}) => (
+const Social = ({isHome}: SocialProps) => (
   <Side isHome={isHome} orientation="left">
     <StyledSocialList>
       {socialMedia &&

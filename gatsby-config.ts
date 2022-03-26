@@ -5,9 +5,9 @@ module.exports = {
   siteMetadata: {
     title: 'Bart van Zeist',
     description:
-      'Brittany Chiang is a software engineer who specializes in building (and occasionally designing) exceptional digital experiences.',
-    siteUrl: 'https://bartvanzeist.nl', // No trailing slash allowed!
-    image: '/og.png', // Path to your image you placed in the 'static' folder
+      'Bart van Zeist is een full-stack software engineer met een passie voor moderne web applicaties.',
+    siteUrl: 'https://bartvanzeist.nl',
+    image: '/og.png',
   },
   plugins: [
     'gatsby-plugin-react-helmet',
@@ -17,12 +17,20 @@ module.exports = {
     'gatsby-transformer-sharp',
     'gatsby-plugin-sitemap',
     'gatsby-plugin-robots-txt',
-    'gatsby-plugin-graphql-codegen',
+    {
+      resolve: `gatsby-plugin-graphql-codegen`,
+      options: {
+        documentPaths: [
+          './src/**/*.{ts,tsx}',
+          './gatsby-node.ts',
+        ],
+      },
+    },
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
-        name: 'BrittanyChiang',
-        short_name: 'BrittanyChiang',
+        name: 'BartvanZeist',
+        short_name: 'BartvanZeist',
         start_url: '/',
         background_color: colors.darkNavy,
         theme_color: colors.navy,
@@ -78,7 +86,7 @@ module.exports = {
               maxWidth: 700,
               linkImagesToOriginal: true,
               quality: 90,
-              tracedSVG: {color: colors.green},
+              tracedSVG: {color: colors.pink},
             },
           },
           {
@@ -151,9 +159,16 @@ module.exports = {
       },
     },
     {
-      resolve: 'gatsby-plugin-google-analytics',
+      resolve: `gatsby-plugin-google-gtag`,
       options: {
-        trackingId: 'UA-45666519-2',
+        trackingIds: [
+          'G-WK9LMK5ZJK',
+        ],
+        // This object gets passed directly to the gtag config command
+        // This config will be shared across all trackingIds
+        gtagConfig: {
+          anonymize_ip: true,
+        },
       },
     },
   ],

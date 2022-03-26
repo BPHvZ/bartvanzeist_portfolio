@@ -6,24 +6,20 @@ export const socialMedia = [
   },
   {
     name: 'Linkedin',
-    url: 'https://www.linkedin.com/in/bchiang7',
-  },
-  {
-    name: 'Codepen',
-    url: 'https://codepen.io/bchiang7',
+    url: 'https://linkedin.com/in/bart-van-zeist-543442193',
   },
 ];
 export const navLinks = [
   {
-    name: 'About',
+    name: 'Over mij',
     url: '/#about',
   },
   {
-    name: 'Experience',
+    name: 'Ervaring',
     url: '/#jobs',
   },
   {
-    name: 'Work',
+    name: 'Werk',
     url: '/#projects',
   },
   {
@@ -32,8 +28,8 @@ export const navLinks = [
   },
 ];
 export const colors = {
-  green: '#64ffda',
-  navy: '#0a192f',
+  pink: '#ff3366',
+  navy: '#041b2d',
   darkNavy: '#020c1b',
 };
 export function srConfig(delay = 200, viewFactor = 0.25) {

@@ -1,10 +1,11 @@
 import React from 'react';
 import {graphql, Link} from 'gatsby';
 import kebabCase from 'lodash/kebabCase';
-import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import {Layout} from '../components';
 import {Helmet} from 'react-helmet';
+import {PageQuery} from '../../graphql-types';
+import {WindowLocation} from '@reach/router';
 
 const StyledPostContainer = styled.main`
   max-width: 1000px;
@@ -37,7 +38,7 @@ const StyledPostContent = styled.div`
   }
 
   code {
-    background-color: var(--lightest-navy);
+    background-color: var(--oxford-blue-lightest);
     color: var(--lightest-slate);
     border-radius: var(--border-radius);
     font-size: var(--fz-sm);
@@ -50,13 +51,18 @@ const StyledPostContent = styled.div`
   }
 `;
 
-const PostTemplate = ({data, location}) => {
-  const {frontmatter, html} = data.markdownRemark;
-  const {title, date, tags} = frontmatter;
+interface PostTemplateProps {
+  data: PageQuery,
+  location: WindowLocation
+}
+
+const PostTemplate = ({data, location}: PostTemplateProps) => {
+  const {frontmatter, html} = data.markdownRemark!;
+  const {title, date, tags} = frontmatter!;
 
   return (
     <Layout location={location}>
-      <Helmet title={title} />
+      <Helmet title={title!} />
 
       <StyledPostContainer>
         <span className="breadcrumb">
@@ -68,7 +74,7 @@ const PostTemplate = ({data, location}) => {
           <h1 className="medium-heading">{title}</h1>
           <p className="subtitle">
             <time>
-              {new Date(date).toLocaleDateString('en-US', {
+              {new Date(date!).toLocaleDateString('en-US', {
                 year: 'numeric',
                 month: 'long',
                 day: 'numeric',
@@ -78,28 +84,22 @@ const PostTemplate = ({data, location}) => {
             {tags &&
               tags.length > 0 &&
               tags.map((tag, i) => (
-                <Link key={i} to={`/pensieve/tags/${kebabCase(tag)}/`} className="tag">
+                <Link key={i} to={`/pensieve/tags/${kebabCase(tag!)}/`} className="tag">
                   #{tag}
                 </Link>
               ))}
           </p>
         </StyledPostHeader>
 
-        <StyledPostContent dangerouslySetInnerHTML={{__html: html}} />
+        <StyledPostContent dangerouslySetInnerHTML={{__html: html!}} />
       </StyledPostContainer>
     </Layout>
   );
 };
-
 export default PostTemplate;
 
-PostTemplate.propTypes = {
-  data: PropTypes.object,
-  location: PropTypes.object,
-};
-
 export const pageQuery = graphql`
-  query ($path: String!) {
+  query Page($path: String!) {
     markdownRemark(frontmatter: { slug: { eq: $path } }) {
       html
       frontmatter {

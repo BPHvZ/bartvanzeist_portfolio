@@ -5,6 +5,8 @@ import PropTypes from 'prop-types';
 import {Helmet} from 'react-helmet';
 import styled from 'styled-components';
 import {Layout} from '../components';
+import {TagPageQuery} from '../../graphql-types';
+import {WindowLocation} from '@reach/router';
 
 const StyledTagsContainer = styled.main`
   max-width: 1000px;
@@ -45,7 +47,15 @@ const StyledTagsContainer = styled.main`
   }
 `;
 
-const TagTemplate = ({pageContext, data, location}) => {
+interface TagTemplateProps {
+  data: TagPageQuery;
+  location: WindowLocation;
+  pageContext: {
+    tag: string;
+  }
+}
+
+const TagTemplate = ({pageContext, data, location}: TagTemplateProps) => {
   const {tag} = pageContext;
   const {edges} = data.allMarkdownRemark;
 
@@ -68,15 +78,15 @@ const TagTemplate = ({pageContext, data, location}) => {
 
         <ul className="fancy-list">
           {edges.map(({node}) => {
-            const {title, slug, date, tags} = node.frontmatter;
+            const {title, slug, date, tags} = node.frontmatter!;
             return (
               <li key={slug}>
                 <h2>
-                  <Link to={slug}>{title}</Link>
+                  <Link to={slug!}>{title!}</Link>
                 </h2>
                 <p className="subtitle">
                   <time>
-                    {new Date(date).toLocaleDateString('en-US', {
+                    {new Date(date!).toLocaleDateString('en-US', {
                       year: 'numeric',
                       month: 'long',
                       day: 'numeric',
@@ -85,9 +95,9 @@ const TagTemplate = ({pageContext, data, location}) => {
                   <span>&nbsp;&mdash;&nbsp;</span>
                   {tags &&
                     tags.length > 0 &&
-                    tags.map((tag, i) => (
-                      <Link key={i} to={`/pensieve/tags/${kebabCase(tag)}/`} className="tag">
-                        #{tag}
+                    tags.map((tagItem, i) => (
+                      <Link key={i} to={`/pensieve/tags/${kebabCase(tagItem!)}/`} className="tag">
+                        #{tagItem}
                       </Link>
                     ))}
                 </p>
@@ -124,7 +134,7 @@ TagTemplate.propTypes = {
 };
 
 export const pageQuery = graphql`
-  query ($tag: String!) {
+  query TagPage($tag: String!) {
     allMarkdownRemark(
       limit: 2000
       sort: { fields: [frontmatter___date], order: DESC }

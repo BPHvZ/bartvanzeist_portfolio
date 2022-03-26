@@ -3309,6 +3309,21 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@reach/router@npm:^1.3.4":
+  version: 1.3.4
+  resolution: "@reach/router@npm:1.3.4"
+  dependencies:
+    create-react-context: 0.3.0
+    invariant: ^2.2.3
+    prop-types: ^15.6.1
+    react-lifecycles-compat: ^3.0.4
+  peerDependencies:
+    react: 15.x || 16.x || 16.4.0-alpha.0911da3
+    react-dom: 15.x || 16.x || 16.4.0-alpha.0911da3
+  checksum: f64372497e0464a9fdfd79283fec3f4fd01ee093f1599d8a8035e0a41fbce22113bfa46dcea63aa8b7b4e0796e916f134aa8e3fccd3974be397e7c19468de3c4
+  languageName: node
+  linkType: hard
+
 "@sideway/address@npm:^4.1.3":
   version: 4.1.4
   resolution: "@sideway/address@npm:4.1.4"
@@ -5220,6 +5235,7 @@ __metadata:
     "@babel/core": ^7.17.8
     "@babel/preset-react": ^7.16.7
     "@octokit/types": ^6.34.0
+    "@reach/router": ^1.3.4
     "@types/animejs": ^3.1.4
     "@types/babel__core": ^7.1.19
     "@types/gatsby-transformer-remark": ^2.9.1
@@ -5228,6 +5244,7 @@ __metadata:
     "@types/prettier": ^2.4.4
     "@types/prismjs": ^1.26.0
     "@types/prop-types": ^15.7.4
+    "@types/reach__router": ^1.3.10
     "@types/react": ^17.0.43
     "@types/react-dom": ^17.0.14
     "@types/react-helmet": ^6.1.5
@@ -5246,6 +5263,7 @@ __metadata:
     eslint-plugin-react: ^7.29.4
     gatsby: ^4.10.3
     gatsby-plugin-google-analytics: ^4.10.0
+    gatsby-plugin-google-gtag: ^4.10.0
     gatsby-plugin-graphql-codegen: ^3.1.1
     gatsby-plugin-image: ^2.10.1
     gatsby-plugin-manifest: ^4.10.2
@@ -6454,6 +6472,19 @@ __metadata:
   bin:
     create-gatsby: cli.js
   checksum: 6b08345b1bfdc02f53dbaa70aa9f838e84146c7ac7b906538aea87236ad211cb3aab801702a84e69360eece3b9d853eb13544554d8bd1008e519c043d7a4ddf8
+  languageName: node
+  linkType: hard
+
+"create-react-context@npm:0.3.0":
+  version: 0.3.0
+  resolution: "create-react-context@npm:0.3.0"
+  dependencies:
+    gud: ^1.0.0
+    warning: ^4.0.3
+  peerDependencies:
+    prop-types: ^15.0.0
+    react: ^0.14.0 || ^15.0.0 || ^16.0.0
+  checksum: e59b7a65671e59f5b11e06f67faadf0733ab6c33247d5631331aeb05450d180b8ae44d73817b9c02f1527654ba490ea3d3dd7320f8d6debb36776f10b0ae6a47
   languageName: node
   linkType: hard
 
@@ -8852,6 +8883,20 @@ __metadata:
   languageName: node
   linkType: hard
 
+"gatsby-plugin-google-gtag@npm:^4.10.0":
+  version: 4.10.0
+  resolution: "gatsby-plugin-google-gtag@npm:4.10.0"
+  dependencies:
+    "@babel/runtime": ^7.15.4
+    minimatch: ^3.0.4
+  peerDependencies:
+    gatsby: ^4.0.0-next
+    react: ^16.9.0 || ^17.0.0
+    react-dom: ^16.9.0 || ^17.0.0
+  checksum: 2ce790ad8e1f235e70ec02cc387b66840523a0271c58c1120869c8afb02e37f215fa9763846af3f698142515a129acfb264347749c09b6f000a0217b1c93c7cd
+  languageName: node
+  linkType: hard
+
 "gatsby-plugin-graphql-codegen@npm:^3.1.1":
   version: 3.1.1
   resolution: "gatsby-plugin-graphql-codegen@npm:3.1.1"
@@ -9918,6 +9963,13 @@ __metadata:
     section-matter: ^1.0.0
     strip-bom-string: ^1.0.0
   checksum: 37717bd424344487d655392251ce8d8878a1275ee087003e61208fba3bfd59cbb73a85b2159abf742ae95e23db04964813fdc33ae18b074208428b2528205222
+  languageName: node
+  linkType: hard
+
+"gud@npm:^1.0.0":
+  version: 1.0.0
+  resolution: "gud@npm:1.0.0"
+  checksum: 3e2eb37cf794364077c18f036d6aa259c821c7fd188f2b7935cb00d589d82a41e0ebb1be809e1a93679417f62f1ad0513e745c3cf5329596e489aef8c5e5feae
   languageName: node
   linkType: hard
 
@@ -17934,6 +17986,15 @@ __metadata:
     unist-util-stringify-position: ^2.0.0
     vfile-message: ^2.0.0
   checksum: ee5726e10d170472cde778fc22e0f7499caa096eb85babea5d0ce0941455b721037ee1c9e6ae506ca2803250acd313d0f464328ead0b55cfe7cb6315f1b462d6
+  languageName: node
+  linkType: hard
+
+"warning@npm:^4.0.3":
+  version: 4.0.3
+  resolution: "warning@npm:4.0.3"
+  dependencies:
+    loose-envify: ^1.0.0
+  checksum: 4f2cb6a9575e4faf71ddad9ad1ae7a00d0a75d24521c193fa464f30e6b04027bd97aa5d9546b0e13d3a150ab402eda216d59c1d0f2d6ca60124d96cd40dfa35c
   languageName: node
   linkType: hard
 

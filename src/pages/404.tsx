@@ -7,14 +7,14 @@ import styled from 'styled-components';
 import {Layout} from '../components';
 import {usePrefersReducedMotion} from '../hooks';
 import {navDelay} from '../utils';
-import {UrlObject} from 'url';
+import {WindowLocation} from '@reach/router';
 
 const StyledMainContainer = styled.main`
   ${({theme}) => theme.mixins.flexCenter};
   flex-direction: column;
 `;
 const StyledTitle = styled.h1`
-  color: var(--green);
+  color: var(--radical-red);
   font-family: var(--font-mono);
   font-size: clamp(100px, 25vw, 200px);
   line-height: 1;
@@ -29,10 +29,10 @@ const StyledHomeButton = styled(Link)`
 `;
 
 interface NotFoundPageProps {
-  location: UrlObject;
+  location: WindowLocation;
 }
 
-const NotFoundPage: React.FC<NotFoundPageProps> = ({location}) => {
+const NotFoundPage = ({location}: NotFoundPageProps) => {
   const [isMounted, setIsMounted] = useState(false);
   const prefersReducedMotion = usePrefersReducedMotion();
 

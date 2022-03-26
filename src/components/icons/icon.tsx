@@ -21,7 +21,7 @@ interface NameProps {
   name: string
 }
 
-const Icon: React.FC<NameProps> = ({name}): ReactElement => {
+const Icon = ({name}: NameProps): ReactElement => {
   switch (name) {
     case 'AppStore':
       return <IconAppStore />;
