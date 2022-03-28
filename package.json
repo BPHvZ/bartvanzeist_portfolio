@@ -89,7 +89,7 @@
     "@typescript-eslint/parser": "^5.16.0",
     "@upstatement/prettier-config": "^1.0.0",
     "babel-preset-gatsby": "^2.10.1",
-    "eslint": "^8.11.0",
+    "eslint": "^8.12.0",
     "eslint-config-google": "^0.14.0",
     "eslint-plugin-react": "^7.29.4",
     "gatsby-remark-code-titles": "^1.1.0",

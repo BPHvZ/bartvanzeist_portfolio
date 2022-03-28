@@ -1,12 +1,12 @@
 export const email = 'bartvanzeist2000@gmail.com';
 export const socialMedia = [
   {
-    name: 'GitHub',
-    url: 'https://github.com/BPHvZ',
-  },
-  {
     name: 'Linkedin',
     url: 'https://linkedin.com/in/bart-van-zeist-543442193',
+  },
+  {
+    name: 'GitHub',
+    url: 'https://github.com/BPHvZ',
   },
 ];
 export const navLinks = [
