@@ -5,68 +5,53 @@
  */
 
 import path from 'path';
-import _ from 'lodash';
 
 // @ts-ignore
-exports.createPages = async ({actions, graphql, reporter}) => {
-  const {createPage}= actions;
-  const postTemplate = path.resolve(`src/templates/post.tsx`);
-  const tagTemplate = path.resolve('src/templates/tag.tsx');
-
-  const result = await graphql(`
-    {
-      postsRemark: allMarkdownRemark(
-        filter: { fileAbsolutePath: { regex: "/posts/" } }
-        sort: { order: DESC, fields: [frontmatter___date] }
-        limit: 1000
-      ) {
-        edges {
-          node {
-            frontmatter {
-              slug
-            }
-          }
-        }
-      }
-      tagsGroup: allMarkdownRemark(limit: 2000) {
-        group(field: frontmatter___tags) {
-          fieldValue
-        }
-      }
-    }
-  `);
-
-  // Handle errors
-  if (result.errors) {
-    reporter.panicOnBuild(`Error while running GraphQL query.`);
-    return;
-  }
-
-  // Create post detail pages
-  const posts = result.data.postsRemark.edges;
-
-  // @ts-ignore
-  posts.forEach(({node}) => {
-    createPage({
-      path: node.frontmatter.slug,
-      component: postTemplate,
-      context: {},
-    });
-  });
-
-  // Extract tag data from query
-  const tags = result.data.tagsGroup.group;
-  // Make tag pages
-  tags.forEach((tag: { fieldValue: string | undefined; }) => {
-    createPage({
-      path: `/pensieve/tags/${_.kebabCase(tag.fieldValue)}/`,
-      component: tagTemplate,
-      context: {
-        tag: tag.fieldValue,
-      },
-    });
-  });
-};
+// exports.createPages = async ({actions, graphql, reporter}) => {
+//   const {createPage}= actions;
+//   const tagTemplate = path.resolve('src/templates/tag.tsx');
+//
+//   const result = await graphql(`
+//     {
+//       tagsGroup: allMarkdownRemark(limit: 2000) {
+//         group(field: frontmatter___tags) {
+//           fieldValue
+//         }
+//       }
+//     }
+//   `);
+//
+//   // Handle errors
+//   if (result.errors) {
+//     reporter.panicOnBuild(`Error while running GraphQL query.`);
+//     return;
+//   }
+//
+//   // Create post detail pages
+//   // const posts = result.data.postsRemark.edges;
+//
+//   // // @ts-ignore
+//   // posts.forEach(({node}) => {
+//   //   createPage({
+//   //     path: node.frontmatter.slug,
+//   //     component: postTemplate,
+//   //     context: {},
+//   //   });
+//   // });
+//
+//   // Extract tag data from query
+//   const tags = result.data.tagsGroup.group;
+//   // Make tag pages
+//   tags.forEach((tag: { fieldValue: string | undefined; }) => {
+//     createPage({
+//       path: `/pensieve/tags/${_.kebabCase(tag.fieldValue)}/`,
+//       component: tagTemplate,
+//       context: {
+//         tag: tag.fieldValue,
+//       },
+//     });
+//   });
+// };
 
 // https://www.gatsbyjs.org/docs/node-apis/#onCreateWebpackConfig
 // @ts-ignore

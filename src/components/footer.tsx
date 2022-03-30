@@ -40,6 +40,8 @@ const StyledSocialLinks = styled.div`
 `;
 
 const StyledCredit = styled.div`
+  display: flex;
+  flex-direction: column;
   color: var(--light-slate);
   font-family: var(--font-mono);
   font-size: var(--fz-xxs);
@@ -108,21 +110,24 @@ const Footer = () => {
       </StyledSocialLinks>
 
       <StyledCredit tabIndex={-1}>
-        <a href="https://github.com/bchiang7/v4">
-          <div>Designed &amp; Built by Brittany Chiang</div>
+        <a href="https://github.com/BPHvZ/bartvanzeist_portfolio">
+          <div>Gemaakt door Bart van Zeist</div>
 
-          {githubInfo.stargazers_count && githubInfo.forks_count && (
+          {githubInfo.stargazers_count > 0 || githubInfo.forks_count > 0 && (
             <div className="github-stats">
               <span>
                 <Icon name="Star" />
-                <span>{githubInfo.stargazers_count.toLocaleString()}</span>
+                <span>{githubInfo.stargazers_count.toLocaleString()} Stars</span>
               </span>
               <span>
                 <Icon name="Fork" />
-                <span>{githubInfo.forks_count.toLocaleString()}</span>
+                <span>{githubInfo.forks_count.toLocaleString()} Forks</span>
               </span>
             </div>
           )}
+        </a>
+        <a href="https://github.com/bchiang7/v4">
+          <div>Forked van Brittany Chiang</div>
         </a>
       </StyledCredit>
     </StyledFooter>

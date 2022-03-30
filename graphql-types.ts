@@ -674,126 +674,17 @@ export type MarkdownRemarkTableOfContentsArgs = {
 export type MarkdownRemarkFrontmatter = {
   title?: Maybe<Scalars['String']>;
   date?: Maybe<Scalars['String']>;
-  github?: Maybe<Scalars['String']>;
-  external?: Maybe<Scalars['String']>;
-  tech?: Maybe<Array<Maybe<Scalars['String']>>>;
   company?: Maybe<Scalars['String']>;
-  showInProjects?: Maybe<Scalars['Boolean']>;
   location?: Maybe<Scalars['String']>;
   range?: Maybe<Scalars['String']>;
   url?: Maybe<Scalars['String']>;
-  ios?: Maybe<Scalars['String']>;
-  android?: Maybe<Scalars['String']>;
-  description?: Maybe<Scalars['String']>;
-  draft?: Maybe<Scalars['Boolean']>;
-  slug?: Maybe<Scalars['String']>;
-  tags?: Maybe<Array<Maybe<Scalars['String']>>>;
+  tech?: Maybe<Array<Maybe<Scalars['String']>>>;
+  showInProjects?: Maybe<Scalars['Boolean']>;
   cover?: Maybe<File>;
   appstore?: Maybe<Scalars['String']>;
   googleplay?: Maybe<Scalars['String']>;
-};
-
-export type StaticImage = Node & {
-  id: Scalars['ID'];
-  parent?: Maybe<Node>;
-  children: Array<Node>;
-  internal: Internal;
-  sourceInstanceName?: Maybe<Scalars['String']>;
-  relativePath?: Maybe<Scalars['String']>;
-  extension?: Maybe<Scalars['String']>;
-  prettySize?: Maybe<Scalars['String']>;
-  modifiedTime?: Maybe<Scalars['Date']>;
-  accessTime?: Maybe<Scalars['Date']>;
-  changeTime?: Maybe<Scalars['Date']>;
-  birthTime?: Maybe<Scalars['Date']>;
-  root?: Maybe<Scalars['String']>;
-  dir?: Maybe<Scalars['String']>;
-  base?: Maybe<Scalars['String']>;
-  ext?: Maybe<Scalars['String']>;
-  name?: Maybe<Scalars['String']>;
-  absolutePath?: Maybe<Scalars['String']>;
-  relativeDirectory?: Maybe<Scalars['String']>;
-  dev?: Maybe<Scalars['Int']>;
-  mode?: Maybe<Scalars['Int']>;
-  nlink?: Maybe<Scalars['Int']>;
-  uid?: Maybe<Scalars['Int']>;
-  rdev?: Maybe<Scalars['Int']>;
-  blksize?: Maybe<Scalars['Int']>;
-  ino?: Maybe<Scalars['Int']>;
-  size?: Maybe<Scalars['Int']>;
-  blocks?: Maybe<Scalars['Int']>;
-  atimeMs?: Maybe<Scalars['Float']>;
-  mtimeMs?: Maybe<Scalars['Float']>;
-  ctimeMs?: Maybe<Scalars['Float']>;
-  birthtimeMs?: Maybe<Scalars['Float']>;
-  atime?: Maybe<Scalars['Date']>;
-  mtime?: Maybe<Scalars['Date']>;
-  ctime?: Maybe<Scalars['Date']>;
-  birthtime?: Maybe<Scalars['Date']>;
-};
-
-
-export type StaticImageModifiedTimeArgs = {
-  formatString?: InputMaybe<Scalars['String']>;
-  fromNow?: InputMaybe<Scalars['Boolean']>;
-  difference?: InputMaybe<Scalars['String']>;
-  locale?: InputMaybe<Scalars['String']>;
-};
-
-
-export type StaticImageAccessTimeArgs = {
-  formatString?: InputMaybe<Scalars['String']>;
-  fromNow?: InputMaybe<Scalars['Boolean']>;
-  difference?: InputMaybe<Scalars['String']>;
-  locale?: InputMaybe<Scalars['String']>;
-};
-
-
-export type StaticImageChangeTimeArgs = {
-  formatString?: InputMaybe<Scalars['String']>;
-  fromNow?: InputMaybe<Scalars['Boolean']>;
-  difference?: InputMaybe<Scalars['String']>;
-  locale?: InputMaybe<Scalars['String']>;
-};
-
-
-export type StaticImageBirthTimeArgs = {
-  formatString?: InputMaybe<Scalars['String']>;
-  fromNow?: InputMaybe<Scalars['Boolean']>;
-  difference?: InputMaybe<Scalars['String']>;
-  locale?: InputMaybe<Scalars['String']>;
-};
-
-
-export type StaticImageAtimeArgs = {
-  formatString?: InputMaybe<Scalars['String']>;
-  fromNow?: InputMaybe<Scalars['Boolean']>;
-  difference?: InputMaybe<Scalars['String']>;
-  locale?: InputMaybe<Scalars['String']>;
-};
-
-
-export type StaticImageMtimeArgs = {
-  formatString?: InputMaybe<Scalars['String']>;
-  fromNow?: InputMaybe<Scalars['Boolean']>;
-  difference?: InputMaybe<Scalars['String']>;
-  locale?: InputMaybe<Scalars['String']>;
-};
-
-
-export type StaticImageCtimeArgs = {
-  formatString?: InputMaybe<Scalars['String']>;
-  fromNow?: InputMaybe<Scalars['Boolean']>;
-  difference?: InputMaybe<Scalars['String']>;
-  locale?: InputMaybe<Scalars['String']>;
-};
-
-
-export type StaticImageBirthtimeArgs = {
-  formatString?: InputMaybe<Scalars['String']>;
-  fromNow?: InputMaybe<Scalars['Boolean']>;
-  difference?: InputMaybe<Scalars['String']>;
-  locale?: InputMaybe<Scalars['String']>;
+  external?: Maybe<Scalars['String']>;
+  github?: Maybe<Scalars['String']>;
 };
 
 export type Query = {
@@ -815,8 +706,6 @@ export type Query = {
   allImageSharp: ImageSharpConnection;
   markdownRemark?: Maybe<MarkdownRemark>;
   allMarkdownRemark: MarkdownRemarkConnection;
-  staticImage?: Maybe<StaticImage>;
-  allStaticImage: StaticImageConnection;
 };
 
 
@@ -1080,54 +969,6 @@ export type QueryAllMarkdownRemarkArgs = {
   limit?: InputMaybe<Scalars['Int']>;
 };
 
-
-export type QueryStaticImageArgs = {
-  id?: InputMaybe<StringQueryOperatorInput>;
-  parent?: InputMaybe<NodeFilterInput>;
-  children?: InputMaybe<NodeFilterListInput>;
-  internal?: InputMaybe<InternalFilterInput>;
-  sourceInstanceName?: InputMaybe<StringQueryOperatorInput>;
-  relativePath?: InputMaybe<StringQueryOperatorInput>;
-  extension?: InputMaybe<StringQueryOperatorInput>;
-  prettySize?: InputMaybe<StringQueryOperatorInput>;
-  modifiedTime?: InputMaybe<DateQueryOperatorInput>;
-  accessTime?: InputMaybe<DateQueryOperatorInput>;
-  changeTime?: InputMaybe<DateQueryOperatorInput>;
-  birthTime?: InputMaybe<DateQueryOperatorInput>;
-  root?: InputMaybe<StringQueryOperatorInput>;
-  dir?: InputMaybe<StringQueryOperatorInput>;
-  base?: InputMaybe<StringQueryOperatorInput>;
-  ext?: InputMaybe<StringQueryOperatorInput>;
-  name?: InputMaybe<StringQueryOperatorInput>;
-  absolutePath?: InputMaybe<StringQueryOperatorInput>;
-  relativeDirectory?: InputMaybe<StringQueryOperatorInput>;
-  dev?: InputMaybe<IntQueryOperatorInput>;
-  mode?: InputMaybe<IntQueryOperatorInput>;
-  nlink?: InputMaybe<IntQueryOperatorInput>;
-  uid?: InputMaybe<IntQueryOperatorInput>;
-  rdev?: InputMaybe<IntQueryOperatorInput>;
-  blksize?: InputMaybe<IntQueryOperatorInput>;
-  ino?: InputMaybe<IntQueryOperatorInput>;
-  size?: InputMaybe<IntQueryOperatorInput>;
-  blocks?: InputMaybe<IntQueryOperatorInput>;
-  atimeMs?: InputMaybe<FloatQueryOperatorInput>;
-  mtimeMs?: InputMaybe<FloatQueryOperatorInput>;
-  ctimeMs?: InputMaybe<FloatQueryOperatorInput>;
-  birthtimeMs?: InputMaybe<FloatQueryOperatorInput>;
-  atime?: InputMaybe<DateQueryOperatorInput>;
-  mtime?: InputMaybe<DateQueryOperatorInput>;
-  ctime?: InputMaybe<DateQueryOperatorInput>;
-  birthtime?: InputMaybe<DateQueryOperatorInput>;
-};
-
-
-export type QueryAllStaticImageArgs = {
-  filter?: InputMaybe<StaticImageFilterInput>;
-  sort?: InputMaybe<StaticImageSortInput>;
-  skip?: InputMaybe<Scalars['Int']>;
-  limit?: InputMaybe<Scalars['Int']>;
-};
-
 export type StringQueryOperatorInput = {
   eq?: InputMaybe<Scalars['String']>;
   ne?: InputMaybe<Scalars['String']>;
@@ -1292,23 +1133,17 @@ export type MarkdownRemarkFilterInput = {
 export type MarkdownRemarkFrontmatterFilterInput = {
   title?: InputMaybe<StringQueryOperatorInput>;
   date?: InputMaybe<StringQueryOperatorInput>;
-  github?: InputMaybe<StringQueryOperatorInput>;
-  external?: InputMaybe<StringQueryOperatorInput>;
-  tech?: InputMaybe<StringQueryOperatorInput>;
   company?: InputMaybe<StringQueryOperatorInput>;
-  showInProjects?: InputMaybe<BooleanQueryOperatorInput>;
   location?: InputMaybe<StringQueryOperatorInput>;
   range?: InputMaybe<StringQueryOperatorInput>;
   url?: InputMaybe<StringQueryOperatorInput>;
-  ios?: InputMaybe<StringQueryOperatorInput>;
-  android?: InputMaybe<StringQueryOperatorInput>;
-  description?: InputMaybe<StringQueryOperatorInput>;
-  draft?: InputMaybe<BooleanQueryOperatorInput>;
-  slug?: InputMaybe<StringQueryOperatorInput>;
-  tags?: InputMaybe<StringQueryOperatorInput>;
+  tech?: InputMaybe<StringQueryOperatorInput>;
+  showInProjects?: InputMaybe<BooleanQueryOperatorInput>;
   cover?: InputMaybe<FileFilterInput>;
   appstore?: InputMaybe<StringQueryOperatorInput>;
   googleplay?: InputMaybe<StringQueryOperatorInput>;
+  external?: InputMaybe<StringQueryOperatorInput>;
+  github?: InputMaybe<StringQueryOperatorInput>;
 };
 
 export type FileFilterInput = {
@@ -1607,20 +1442,12 @@ export type FileFieldsEnum =
   | 'childrenMarkdownRemark___id'
   | 'childrenMarkdownRemark___frontmatter___title'
   | 'childrenMarkdownRemark___frontmatter___date'
-  | 'childrenMarkdownRemark___frontmatter___github'
-  | 'childrenMarkdownRemark___frontmatter___external'
-  | 'childrenMarkdownRemark___frontmatter___tech'
   | 'childrenMarkdownRemark___frontmatter___company'
-  | 'childrenMarkdownRemark___frontmatter___showInProjects'
   | 'childrenMarkdownRemark___frontmatter___location'
   | 'childrenMarkdownRemark___frontmatter___range'
   | 'childrenMarkdownRemark___frontmatter___url'
-  | 'childrenMarkdownRemark___frontmatter___ios'
-  | 'childrenMarkdownRemark___frontmatter___android'
-  | 'childrenMarkdownRemark___frontmatter___description'
-  | 'childrenMarkdownRemark___frontmatter___draft'
-  | 'childrenMarkdownRemark___frontmatter___slug'
-  | 'childrenMarkdownRemark___frontmatter___tags'
+  | 'childrenMarkdownRemark___frontmatter___tech'
+  | 'childrenMarkdownRemark___frontmatter___showInProjects'
   | 'childrenMarkdownRemark___frontmatter___cover___sourceInstanceName'
   | 'childrenMarkdownRemark___frontmatter___cover___absolutePath'
   | 'childrenMarkdownRemark___frontmatter___cover___relativePath'
@@ -1661,6 +1488,8 @@ export type FileFieldsEnum =
   | 'childrenMarkdownRemark___frontmatter___cover___children'
   | 'childrenMarkdownRemark___frontmatter___appstore'
   | 'childrenMarkdownRemark___frontmatter___googleplay'
+  | 'childrenMarkdownRemark___frontmatter___external'
+  | 'childrenMarkdownRemark___frontmatter___github'
   | 'childrenMarkdownRemark___excerpt'
   | 'childrenMarkdownRemark___rawMarkdownBody'
   | 'childrenMarkdownRemark___fileAbsolutePath'
@@ -1716,20 +1545,12 @@ export type FileFieldsEnum =
   | 'childMarkdownRemark___id'
   | 'childMarkdownRemark___frontmatter___title'
   | 'childMarkdownRemark___frontmatter___date'
-  | 'childMarkdownRemark___frontmatter___github'
-  | 'childMarkdownRemark___frontmatter___external'
-  | 'childMarkdownRemark___frontmatter___tech'
   | 'childMarkdownRemark___frontmatter___company'
-  | 'childMarkdownRemark___frontmatter___showInProjects'
   | 'childMarkdownRemark___frontmatter___location'
   | 'childMarkdownRemark___frontmatter___range'
   | 'childMarkdownRemark___frontmatter___url'
-  | 'childMarkdownRemark___frontmatter___ios'
-  | 'childMarkdownRemark___frontmatter___android'
-  | 'childMarkdownRemark___frontmatter___description'
-  | 'childMarkdownRemark___frontmatter___draft'
-  | 'childMarkdownRemark___frontmatter___slug'
-  | 'childMarkdownRemark___frontmatter___tags'
+  | 'childMarkdownRemark___frontmatter___tech'
+  | 'childMarkdownRemark___frontmatter___showInProjects'
   | 'childMarkdownRemark___frontmatter___cover___sourceInstanceName'
   | 'childMarkdownRemark___frontmatter___cover___absolutePath'
   | 'childMarkdownRemark___frontmatter___cover___relativePath'
@@ -1770,6 +1591,8 @@ export type FileFieldsEnum =
   | 'childMarkdownRemark___frontmatter___cover___children'
   | 'childMarkdownRemark___frontmatter___appstore'
   | 'childMarkdownRemark___frontmatter___googleplay'
+  | 'childMarkdownRemark___frontmatter___external'
+  | 'childMarkdownRemark___frontmatter___github'
   | 'childMarkdownRemark___excerpt'
   | 'childMarkdownRemark___rawMarkdownBody'
   | 'childMarkdownRemark___fileAbsolutePath'
@@ -3517,20 +3340,12 @@ export type MarkdownRemarkFieldsEnum =
   | 'id'
   | 'frontmatter___title'
   | 'frontmatter___date'
-  | 'frontmatter___github'
-  | 'frontmatter___external'
-  | 'frontmatter___tech'
   | 'frontmatter___company'
-  | 'frontmatter___showInProjects'
   | 'frontmatter___location'
   | 'frontmatter___range'
   | 'frontmatter___url'
-  | 'frontmatter___ios'
-  | 'frontmatter___android'
-  | 'frontmatter___description'
-  | 'frontmatter___draft'
-  | 'frontmatter___slug'
-  | 'frontmatter___tags'
+  | 'frontmatter___tech'
+  | 'frontmatter___showInProjects'
   | 'frontmatter___cover___sourceInstanceName'
   | 'frontmatter___cover___absolutePath'
   | 'frontmatter___cover___relativePath'
@@ -3611,6 +3426,8 @@ export type MarkdownRemarkFieldsEnum =
   | 'frontmatter___cover___internal___type'
   | 'frontmatter___appstore'
   | 'frontmatter___googleplay'
+  | 'frontmatter___external'
+  | 'frontmatter___github'
   | 'excerpt'
   | 'rawMarkdownBody'
   | 'fileAbsolutePath'
@@ -3758,256 +3575,6 @@ export type MarkdownRemarkSortInput = {
   order?: InputMaybe<Array<InputMaybe<SortOrderEnum>>>;
 };
 
-export type StaticImageConnection = {
-  totalCount: Scalars['Int'];
-  edges: Array<StaticImageEdge>;
-  nodes: Array<StaticImage>;
-  pageInfo: PageInfo;
-  distinct: Array<Scalars['String']>;
-  max?: Maybe<Scalars['Float']>;
-  min?: Maybe<Scalars['Float']>;
-  sum?: Maybe<Scalars['Float']>;
-  group: Array<StaticImageGroupConnection>;
-};
-
-
-export type StaticImageConnectionDistinctArgs = {
-  field: StaticImageFieldsEnum;
-};
-
-
-export type StaticImageConnectionMaxArgs = {
-  field: StaticImageFieldsEnum;
-};
-
-
-export type StaticImageConnectionMinArgs = {
-  field: StaticImageFieldsEnum;
-};
-
-
-export type StaticImageConnectionSumArgs = {
-  field: StaticImageFieldsEnum;
-};
-
-
-export type StaticImageConnectionGroupArgs = {
-  skip?: InputMaybe<Scalars['Int']>;
-  limit?: InputMaybe<Scalars['Int']>;
-  field: StaticImageFieldsEnum;
-};
-
-export type StaticImageEdge = {
-  next?: Maybe<StaticImage>;
-  node: StaticImage;
-  previous?: Maybe<StaticImage>;
-};
-
-export type StaticImageFieldsEnum =
-  | 'id'
-  | 'parent___id'
-  | 'parent___parent___id'
-  | 'parent___parent___parent___id'
-  | 'parent___parent___parent___children'
-  | 'parent___parent___children'
-  | 'parent___parent___children___id'
-  | 'parent___parent___children___children'
-  | 'parent___parent___internal___content'
-  | 'parent___parent___internal___contentDigest'
-  | 'parent___parent___internal___description'
-  | 'parent___parent___internal___fieldOwners'
-  | 'parent___parent___internal___ignoreType'
-  | 'parent___parent___internal___mediaType'
-  | 'parent___parent___internal___owner'
-  | 'parent___parent___internal___type'
-  | 'parent___children'
-  | 'parent___children___id'
-  | 'parent___children___parent___id'
-  | 'parent___children___parent___children'
-  | 'parent___children___children'
-  | 'parent___children___children___id'
-  | 'parent___children___children___children'
-  | 'parent___children___internal___content'
-  | 'parent___children___internal___contentDigest'
-  | 'parent___children___internal___description'
-  | 'parent___children___internal___fieldOwners'
-  | 'parent___children___internal___ignoreType'
-  | 'parent___children___internal___mediaType'
-  | 'parent___children___internal___owner'
-  | 'parent___children___internal___type'
-  | 'parent___internal___content'
-  | 'parent___internal___contentDigest'
-  | 'parent___internal___description'
-  | 'parent___internal___fieldOwners'
-  | 'parent___internal___ignoreType'
-  | 'parent___internal___mediaType'
-  | 'parent___internal___owner'
-  | 'parent___internal___type'
-  | 'children'
-  | 'children___id'
-  | 'children___parent___id'
-  | 'children___parent___parent___id'
-  | 'children___parent___parent___children'
-  | 'children___parent___children'
-  | 'children___parent___children___id'
-  | 'children___parent___children___children'
-  | 'children___parent___internal___content'
-  | 'children___parent___internal___contentDigest'
-  | 'children___parent___internal___description'
-  | 'children___parent___internal___fieldOwners'
-  | 'children___parent___internal___ignoreType'
-  | 'children___parent___internal___mediaType'
-  | 'children___parent___internal___owner'
-  | 'children___parent___internal___type'
-  | 'children___children'
-  | 'children___children___id'
-  | 'children___children___parent___id'
-  | 'children___children___parent___children'
-  | 'children___children___children'
-  | 'children___children___children___id'
-  | 'children___children___children___children'
-  | 'children___children___internal___content'
-  | 'children___children___internal___contentDigest'
-  | 'children___children___internal___description'
-  | 'children___children___internal___fieldOwners'
-  | 'children___children___internal___ignoreType'
-  | 'children___children___internal___mediaType'
-  | 'children___children___internal___owner'
-  | 'children___children___internal___type'
-  | 'children___internal___content'
-  | 'children___internal___contentDigest'
-  | 'children___internal___description'
-  | 'children___internal___fieldOwners'
-  | 'children___internal___ignoreType'
-  | 'children___internal___mediaType'
-  | 'children___internal___owner'
-  | 'children___internal___type'
-  | 'internal___content'
-  | 'internal___contentDigest'
-  | 'internal___description'
-  | 'internal___fieldOwners'
-  | 'internal___ignoreType'
-  | 'internal___mediaType'
-  | 'internal___owner'
-  | 'internal___type'
-  | 'sourceInstanceName'
-  | 'relativePath'
-  | 'extension'
-  | 'prettySize'
-  | 'modifiedTime'
-  | 'accessTime'
-  | 'changeTime'
-  | 'birthTime'
-  | 'root'
-  | 'dir'
-  | 'base'
-  | 'ext'
-  | 'name'
-  | 'absolutePath'
-  | 'relativeDirectory'
-  | 'dev'
-  | 'mode'
-  | 'nlink'
-  | 'uid'
-  | 'rdev'
-  | 'blksize'
-  | 'ino'
-  | 'size'
-  | 'blocks'
-  | 'atimeMs'
-  | 'mtimeMs'
-  | 'ctimeMs'
-  | 'birthtimeMs'
-  | 'atime'
-  | 'mtime'
-  | 'ctime'
-  | 'birthtime';
-
-export type StaticImageGroupConnection = {
-  totalCount: Scalars['Int'];
-  edges: Array<StaticImageEdge>;
-  nodes: Array<StaticImage>;
-  pageInfo: PageInfo;
-  distinct: Array<Scalars['String']>;
-  max?: Maybe<Scalars['Float']>;
-  min?: Maybe<Scalars['Float']>;
-  sum?: Maybe<Scalars['Float']>;
-  group: Array<StaticImageGroupConnection>;
-  field: Scalars['String'];
-  fieldValue?: Maybe<Scalars['String']>;
-};
-
-
-export type StaticImageGroupConnectionDistinctArgs = {
-  field: StaticImageFieldsEnum;
-};
-
-
-export type StaticImageGroupConnectionMaxArgs = {
-  field: StaticImageFieldsEnum;
-};
-
-
-export type StaticImageGroupConnectionMinArgs = {
-  field: StaticImageFieldsEnum;
-};
-
-
-export type StaticImageGroupConnectionSumArgs = {
-  field: StaticImageFieldsEnum;
-};
-
-
-export type StaticImageGroupConnectionGroupArgs = {
-  skip?: InputMaybe<Scalars['Int']>;
-  limit?: InputMaybe<Scalars['Int']>;
-  field: StaticImageFieldsEnum;
-};
-
-export type StaticImageFilterInput = {
-  id?: InputMaybe<StringQueryOperatorInput>;
-  parent?: InputMaybe<NodeFilterInput>;
-  children?: InputMaybe<NodeFilterListInput>;
-  internal?: InputMaybe<InternalFilterInput>;
-  sourceInstanceName?: InputMaybe<StringQueryOperatorInput>;
-  relativePath?: InputMaybe<StringQueryOperatorInput>;
-  extension?: InputMaybe<StringQueryOperatorInput>;
-  prettySize?: InputMaybe<StringQueryOperatorInput>;
-  modifiedTime?: InputMaybe<DateQueryOperatorInput>;
-  accessTime?: InputMaybe<DateQueryOperatorInput>;
-  changeTime?: InputMaybe<DateQueryOperatorInput>;
-  birthTime?: InputMaybe<DateQueryOperatorInput>;
-  root?: InputMaybe<StringQueryOperatorInput>;
-  dir?: InputMaybe<StringQueryOperatorInput>;
-  base?: InputMaybe<StringQueryOperatorInput>;
-  ext?: InputMaybe<StringQueryOperatorInput>;
-  name?: InputMaybe<StringQueryOperatorInput>;
-  absolutePath?: InputMaybe<StringQueryOperatorInput>;
-  relativeDirectory?: InputMaybe<StringQueryOperatorInput>;
-  dev?: InputMaybe<IntQueryOperatorInput>;
-  mode?: InputMaybe<IntQueryOperatorInput>;
-  nlink?: InputMaybe<IntQueryOperatorInput>;
-  uid?: InputMaybe<IntQueryOperatorInput>;
-  rdev?: InputMaybe<IntQueryOperatorInput>;
-  blksize?: InputMaybe<IntQueryOperatorInput>;
-  ino?: InputMaybe<IntQueryOperatorInput>;
-  size?: InputMaybe<IntQueryOperatorInput>;
-  blocks?: InputMaybe<IntQueryOperatorInput>;
-  atimeMs?: InputMaybe<FloatQueryOperatorInput>;
-  mtimeMs?: InputMaybe<FloatQueryOperatorInput>;
-  ctimeMs?: InputMaybe<FloatQueryOperatorInput>;
-  birthtimeMs?: InputMaybe<FloatQueryOperatorInput>;
-  atime?: InputMaybe<DateQueryOperatorInput>;
-  mtime?: InputMaybe<DateQueryOperatorInput>;
-  ctime?: InputMaybe<DateQueryOperatorInput>;
-  birthtime?: InputMaybe<DateQueryOperatorInput>;
-};
-
-export type StaticImageSortInput = {
-  fields?: InputMaybe<Array<InputMaybe<StaticImageFieldsEnum>>>;
-  order?: InputMaybe<Array<InputMaybe<SortOrderEnum>>>;
-};
-
 export type SiteQueryVariables = Exact<{ [key: string]: never; }>;
 
 
@@ -4027,37 +3594,3 @@ export type AllProjectsQueryVariables = Exact<{ [key: string]: never; }>;
 
 
 export type AllProjectsQuery = { projects: { edges: Array<{ node: { html?: string | null, frontmatter?: { title?: string | null, tech?: Array<string | null> | null, github?: string | null, external?: string | null } | null } }> } };
-
-export type ProjectsQueryVariables = Exact<{ [key: string]: never; }>;
-
-
-export type ProjectsQuery = { allMarkdownRemark: { edges: Array<{ node: { html?: string | null, frontmatter?: { date?: string | null, title?: string | null, tech?: Array<string | null> | null, github?: string | null, external?: string | null, ios?: string | null, android?: string | null, company?: string | null } | null } }> } };
-
-export type PostsQueryVariables = Exact<{ [key: string]: never; }>;
-
-
-export type PostsQuery = { allMarkdownRemark: { edges: Array<{ node: { html?: string | null, frontmatter?: { title?: string | null, description?: string | null, slug?: string | null, date?: string | null, tags?: Array<string | null> | null, draft?: boolean | null } | null } }> } };
-
-export type Unnamed_1_QueryVariables = Exact<{ [key: string]: never; }>;
-
-
-export type Unnamed_1_Query = { allMarkdownRemark: { group: Array<{ fieldValue?: string | null, totalCount: number }> } };
-
-export type PageQueryVariables = Exact<{
-  path: Scalars['String'];
-}>;
-
-
-export type PageQuery = { markdownRemark?: { html?: string | null, frontmatter?: { title?: string | null, description?: string | null, date?: string | null, slug?: string | null, tags?: Array<string | null> | null } | null } | null };
-
-export type TagPageQueryVariables = Exact<{
-  tag: Scalars['String'];
-}>;
-
-
-export type TagPageQuery = { allMarkdownRemark: { totalCount: number, edges: Array<{ node: { frontmatter?: { title?: string | null, description?: string | null, date?: string | null, slug?: string | null, tags?: Array<string | null> | null } | null } }> } };
-
-export type Unnamed_2_QueryVariables = Exact<{ [key: string]: never; }>;
-
-
-export type Unnamed_2_Query = { postsRemark: { edges: Array<{ node: { frontmatter?: { slug?: string | null } | null } }> }, tagsGroup: { group: Array<{ fieldValue?: string | null }> } };

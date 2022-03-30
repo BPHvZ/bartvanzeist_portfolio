@@ -34,6 +34,7 @@ const Layout = ({children, location}: LayoutProps) => {
 
   useEffect(() => {
     if (isLoading) {
+      location.hash = '#about';
       return;
     }
 
