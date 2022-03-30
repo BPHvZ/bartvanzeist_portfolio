@@ -181,8 +181,8 @@ const Nav = ({isHome}: NavProps) => {
   );
 
   const ResumeLink = (
-    <a className="resume-button" href="/resume.pdf" target="_blank" rel="noopener noreferrer">
-      Resume
+    <a className="resume-button" href="/CV_-_Bart_van_Zeist.pdf" target="_blank" rel="noopener noreferrer">
+      Bekijk CV
     </a>
   );
 

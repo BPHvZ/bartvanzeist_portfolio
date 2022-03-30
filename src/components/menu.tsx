@@ -276,8 +276,8 @@ const Menu = () => {
               </ol>
             )}
 
-            <a href="/resume.pdf" className="resume-link">
-              Resume
+            <a href="/CV_-_Bart_van_Zeist.pdf" className="resume-link">
+              Bekijk CV
             </a>
           </nav>
         </StyledSidebar>
