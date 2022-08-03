@@ -152,19 +152,17 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-plugin-google-gtag`,
+      resolve: 'gatsby-plugin-google-tagmanager',
       options: {
-        trackingIds: [
-          'G-WK9LMK5ZJK',
-        ],
-        // This object gets passed directly to the gtag config command
-        // This config will be shared across all trackingIds
-        gtagConfig: {
-          anonymize_ip: true,
-        },
-        pluginConfig: {
-          head: true,
-        },
+        id: 'GTM-M2JSCZ8',
+
+        // Include GTM in development.
+        //
+        // Defaults to false meaning GTM will only be loaded in production.
+        includeInDevelopment: false,
+
+        // Defaults to false
+        enableWebVitalsTracking: true,
       },
     },
   ],

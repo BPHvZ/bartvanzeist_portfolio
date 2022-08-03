@@ -5841,6 +5841,7 @@ __metadata:
     gatsby: ^4.20.0
     gatsby-plugin-google-analytics: ^4.20.0
     gatsby-plugin-google-gtag: ^4.20.0
+    gatsby-plugin-google-tagmanager: ^4.20.0
     gatsby-plugin-graphql-codegen: ^3.1.1
     gatsby-plugin-image: ^2.20.0
     gatsby-plugin-manifest: ^4.20.0
@@ -9448,6 +9449,20 @@ __metadata:
     react: ^16.9.0 || ^17.0.0 || ^18.0.0
     react-dom: ^16.9.0 || ^17.0.0 || ^18.0.0
   checksum: 347cb0e51a402be76e225eb2a1ab23dd38d9010f586a3e6cd74e301ad03b7cda0aa7d2f5fcf4904cb13b27b42a27370e9d8ee535dabb52efc787f18966f069e2
+  languageName: node
+  linkType: hard
+
+"gatsby-plugin-google-tagmanager@npm:^4.20.0":
+  version: 4.20.0
+  resolution: "gatsby-plugin-google-tagmanager@npm:4.20.0"
+  dependencies:
+    "@babel/runtime": ^7.15.4
+    web-vitals: ^1.1.2
+  peerDependencies:
+    gatsby: ^4.0.0-next
+    react: ^16.9.0 || ^17.0.0 || ^18.0.0
+    react-dom: ^16.9.0 || ^17.0.0 || ^18.0.0
+  checksum: 93f0e727ca63b109044f51eed0e53ae6d273afd0d9e4bbd5df0a8e328d0fce4e8b465f7aa301ec7fb91cdcdd2b797e92024ddc89f09b32bc6bc8b4b5b3ab28b4
   languageName: node
   linkType: hard
 
