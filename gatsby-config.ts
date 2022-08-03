@@ -162,6 +162,9 @@ module.exports = {
         gtagConfig: {
           anonymize_ip: true,
         },
+        pluginConfig: {
+          head: true,
+        },
       },
     },
   ],
