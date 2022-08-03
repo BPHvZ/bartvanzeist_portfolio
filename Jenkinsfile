@@ -10,7 +10,8 @@ pipeline {
     stage('Prepare') {
       steps {
         nodejs('NodeJS 18.7.0') {
-          sh '''npm install gatsby-cli'''
+          sh '''corepack enable
+yarn install'''
         }
 
       }
@@ -19,7 +20,7 @@ pipeline {
     stage('Build') {
       steps {
         nodejs('NodeJS 18.7.0') {
-          sh 'npm run build'
+          sh 'yarn run build'
         }
 
       }
