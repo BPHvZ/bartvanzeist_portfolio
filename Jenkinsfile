@@ -31,7 +31,7 @@ yarn install'''
         branch 'main'
       }
       steps {
-        ftpPublisher alwaysPublishFromMaster: false, continueOnError: false, failOnError: false, paramPublish: [parameterName: ''], masterNodeName: 'master', publishers: [[configName: 'bartvanzeist.nl', transfers: [[asciiMode: false, cleanRemote: true, excludes: '', flatten: false, makeEmptyDirs: false, noDefaultExcludes: false, patternSeparator: '[, ]+', remoteDirectory: '', remoteDirectorySDF: false, removePrefix: 'bartvanzeist/public', sourceFiles: 'bartvanzeist/public/**']], usePromotionTimestamp: false, useWorkspaceInPromotion: false, verbose: false]]
+        ftpPublisher alwaysPublishFromMaster: false, continueOnError: false, failOnError: false, paramPublish: [parameterName: ''], masterNodeName: 'master', publishers: [[configName: 'bartvanzeist.nl', transfers: [[asciiMode: false, cleanRemote: true, excludes: '', flatten: false, makeEmptyDirs: false, noDefaultExcludes: false, patternSeparator: '[, ]+', remoteDirectory: '', remoteDirectorySDF: false, removePrefix: 'public', sourceFiles: 'public/']], usePromotionTimestamp: false, useWorkspaceInPromotion: false, verbose: false]]
       }
     }
 
