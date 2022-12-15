@@ -31,20 +31,7 @@ yarn install'''
         branch 'main'
       }
       steps {
-        script {
-          withCredentials([usernamePassword(credentialsId: 'strato_sftp', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
-            def remote = [:]
-            remote.name = "ssh.strato.de"
-            remote.host = "ssh.strato.de"
-            remote.allowAnyHosts = true
-            remote.user = USERNAME
-            remote.password = PASSWORD
-            sshCommand remote: remote, command: 'cd bartvanzeist && rm -rf *'
-            sshPut remote: remote, from: 'public', into: 'bartvanzeist'
-            sshCommand remote: remote, command: 'cp -R bartvanzeist/public/. bartvanzeist && rm -rf bartvanzeist/public'
-          }
-        }
-
+        ftpPublisher alwaysPublishFromMaster: false, continueOnError: false, failOnError: false, publishers: [[configName: 'bartvanzeist.nl', transfers: [[asciiMode: false, cleanRemote: false, excludes: '', flatten: false, makeEmptyDirs: false, noDefaultExcludes: false, patternSeparator: '[, ]+', remoteDirectory: '', remoteDirectorySDF: false, removePrefix: 'bartvanzeist/public', sourceFiles: 'bartvanzeist/public/**']], usePromotionTimestamp: false, useWorkspaceInPromotion: false, verbose: false]]
       }
     }
 
