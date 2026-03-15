@@ -5,6 +5,8 @@ company: 'DEVCake'
 location: 'Deventer'
 range: 'September 2020 - Januari 2021'
 experienceType: 'study'
+tech: ['Python', 'Machine Learning', 'NLP']
+topics: ['Softwarekwaliteit', 'Tekstclassificatie', 'Data-analyse']
 url: 'https://www.devcake.nl/home/'
 ---
 - Met 7 medestudenten gewerkt aan een zoekmachine voor (kranten)artikelen die gerelateerd zijn aan specifieke werkgebieden.

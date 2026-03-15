@@ -5,6 +5,8 @@ company: 'PinkRoccade Healthcare'
 location: 'Apeldoorn'
 range: 'April 2020 - Januari 2022'
 experienceType: 'study'
+tech: ['Microsoft Azure', 'Terraform', 'Terratest', 'CI/CD']
+topics: ['UI/UX', 'Webdevelopment', 'Cloud infrastructuur', 'Infra testing', 'Stage']
 url: 'https://pinkroccade-healthcare.nl/'
 ---
 **Project Webdevelopment (April - Juni 2020)**

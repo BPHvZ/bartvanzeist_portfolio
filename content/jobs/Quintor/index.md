@@ -5,6 +5,8 @@ company: 'Quintor'
 location: 'Deventer'
 range: 'Februari 2022 - Augustus 2022'
 experienceType: 'study'
+tech: ['Angular', 'Spring Boot', 'TypeScript', 'Java']
+topics: ['Afstudeerproject', 'Stakeholdermanagement', 'Requirementsanalyse']
 url: 'https://quintor.nl/'
 ---
 - In mijn 4e studiejaar afgestudeerd bij Quintor.

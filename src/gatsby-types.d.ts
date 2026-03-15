@@ -1431,6 +1431,7 @@ type MarkdownRemarkFrontmatter = {
   readonly showInProjects: Maybe<Scalars['Boolean']>;
   readonly tech: Maybe<ReadonlyArray<Maybe<Scalars['String']>>>;
   readonly title: Maybe<Scalars['String']>;
+  readonly topics: Maybe<ReadonlyArray<Maybe<Scalars['String']>>>;
   readonly url: Maybe<Scalars['String']>;
 };
 
@@ -1448,6 +1449,7 @@ type MarkdownRemarkFrontmatterFieldSelector = {
   readonly showInProjects: InputMaybe<FieldSelectorEnum>;
   readonly tech: InputMaybe<FieldSelectorEnum>;
   readonly title: InputMaybe<FieldSelectorEnum>;
+  readonly topics: InputMaybe<FieldSelectorEnum>;
   readonly url: InputMaybe<FieldSelectorEnum>;
 };
 
@@ -1465,6 +1467,7 @@ type MarkdownRemarkFrontmatterFilterInput = {
   readonly showInProjects: InputMaybe<BooleanQueryOperatorInput>;
   readonly tech: InputMaybe<StringQueryOperatorInput>;
   readonly title: InputMaybe<StringQueryOperatorInput>;
+  readonly topics: InputMaybe<StringQueryOperatorInput>;
   readonly url: InputMaybe<StringQueryOperatorInput>;
 };
 
@@ -1482,6 +1485,7 @@ type MarkdownRemarkFrontmatterSortInput = {
   readonly showInProjects: InputMaybe<SortOrderEnum>;
   readonly tech: InputMaybe<SortOrderEnum>;
   readonly title: InputMaybe<SortOrderEnum>;
+  readonly topics: InputMaybe<SortOrderEnum>;
   readonly url: InputMaybe<SortOrderEnum>;
 };
 
@@ -2723,7 +2727,7 @@ type allFeaturedProjectsQuery = { readonly featured: { readonly edges: ReadonlyA
 type AllJobsQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-type AllJobsQuery = { readonly jobs: { readonly edges: ReadonlyArray<{ readonly node: { readonly html: string | null, readonly frontmatter: { readonly title: string | null, readonly company: string | null, readonly range: string | null, readonly url: string | null, readonly experienceType: string | null } | null } }> } };
+type AllJobsQuery = { readonly jobs: { readonly edges: ReadonlyArray<{ readonly node: { readonly html: string | null, readonly frontmatter: { readonly title: string | null, readonly company: string | null, readonly range: string | null, readonly url: string | null, readonly experienceType: string | null, readonly tech: ReadonlyArray<string | null> | null, readonly topics: ReadonlyArray<string | null> | null } | null } }> } };
 
 type AllProjectsQueryVariables = Exact<{ [key: string]: never; }>;
 

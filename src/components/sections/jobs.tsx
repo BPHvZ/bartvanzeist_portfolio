@@ -42,6 +42,8 @@ interface ExperienceFrontmatter {
   range?: string | null;
   url?: string | null;
   experienceType?: ExperienceType | null;
+  tech?: Array<string | null> | null;
+  topics?: Array<string | null> | null;
 }
 
 interface ExperienceNode {
@@ -66,6 +68,8 @@ interface ExperienceTabsProps {
   ariaLabel: string;
   items: ExperienceEdge[];
 }
+
+const isNonEmptyString = (value: string | null | undefined): value is string => Boolean(value);
 
 const StyledTabList = styled.div`
   position: relative;
@@ -207,11 +211,62 @@ const StyledTabPanel = styled.div`
     }
   }
 
-  .range {
+  .experience-header {
     margin-bottom: 25px;
+  }
+
+  .range {
     color: var(--light-slate);
     font-family: var(--font-mono);
     font-size: var(--fz-xs);
+  }
+
+  .experience-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 16px;
+  }
+
+  .meta-group {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+
+    @media (max-width: 600px) {
+      flex-direction: column;
+      gap: 4px;
+    }
+  }
+
+  .meta-label {
+    min-width: 56px;
+    color: var(--lightest-slate);
+    font-family: var(--font-mono);
+    font-size: var(--fz-xxs);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+
+    @media (max-width: 600px) {
+      min-width: 0;
+    }
+  }
+
+  .meta-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px 15px;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+
+  .meta-list li {
+    color: var(--light-slate);
+    font-family: var(--font-mono);
+    font-size: var(--fz-xxs);
+    line-height: 1.6;
+    overflow-wrap: anywhere;
   }
 
   .gatsby-resp-image-wrapper {
@@ -319,7 +374,11 @@ const ExperienceTabs = ({sectionId, heading, intro, ariaLabel, items}: Experienc
         <StyledTabPanels>
           {items.map(({node}, i) => {
             const {frontmatter, html} = node;
-            const {title, url, company, range} = frontmatter ?? {};
+            const {title, url, company, range, tech, topics} = frontmatter ?? {};
+            const metaGroups = [
+              {label: 'Tech', items: tech?.filter(isNonEmptyString) ?? []},
+              {label: 'Topics', items: topics?.filter(isNonEmptyString) ?? []},
+            ].filter(({items}) => items.length > 0);
             const panelRef = panelRefs.current[i];
             const itemId = `${sectionId}-${company}-${i}`;
 
@@ -348,7 +407,24 @@ const ExperienceTabs = ({sectionId, heading, intro, ariaLabel, items}: Experienc
                     </span>
                   </h3>
 
-                  <p className="range">{range}</p>
+                  <div className="experience-header">
+                    <p className="range">{range}</p>
+
+                    {metaGroups.length > 0 && (
+                      <div className="experience-meta">
+                        {metaGroups.map(({label, items}) => (
+                          <div className="meta-group" key={`${itemId}-${label}`}>
+                            <span className="meta-label">{label}</span>
+                            <ul className="meta-list">
+                              {items.map((item) => (
+                                <li key={`${itemId}-${label}-${item}`}>{item}</li>
+                              ))}
+                            </ul>
+                          </div>
+                        ))}
+                      </div>
+                    )}
+                  </div>
 
                   <div dangerouslySetInnerHTML={{__html: html!}} />
                 </StyledTabPanel>
@@ -376,6 +452,8 @@ const Jobs = () => {
               range
               url
               experienceType
+              tech
+              topics
             }
             html
           }
