@@ -2,10 +2,12 @@
 
 Forked van [bchiang7/v4](https://github.com/bchiang7/v4)
 
+Built with Gatsby 5, React 18, TypeScript 5, and styled-components 6.
+
 ## Requirements
 
-- Node.js 18.7.0 via `nvm use`
-- Corepack-enabled Yarn 3.2.0
+- Node.js 24.14.0 via `nvm use`
+- Corepack-enabled Yarn 4.12.0
 
 ## Install
 
@@ -32,5 +34,11 @@ The static site output is generated in `public/` and can be deployed to any stat
 
 ```sh
 yarn serve
+```
+
+## Lint
+
+```sh
+yarn lint
 ```
 

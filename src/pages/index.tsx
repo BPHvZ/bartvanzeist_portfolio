@@ -1,14 +1,14 @@
 import React from 'react';
+import type {PageProps} from 'gatsby';
 import styled from 'styled-components';
 import {About, Contact, Featured, Hero, Jobs, Layout, Projects} from '../components';
-import {WindowLocation} from '@reach/router';
 
 const StyledMainContainer = styled.main`
   counter-reset: section;
 `;
 
 interface IndexPageProps {
-  location: WindowLocation;
+  location: PageProps['location'];
 }
 
 const IndexPage = ({location}: IndexPageProps) => (

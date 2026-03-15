@@ -1,4 +1,5 @@
 import React, {useEffect, useState} from 'react';
+import type {PageProps} from 'gatsby';
 import {Link} from 'gatsby';
 import {Helmet} from 'react-helmet';
 import {CSSTransition, TransitionGroup} from 'react-transition-group';
@@ -7,7 +8,6 @@ import styled from 'styled-components';
 import {Layout} from '../components';
 import {usePrefersReducedMotion} from '../hooks';
 import {navDelay} from '../utils';
-import {WindowLocation} from '@reach/router';
 
 const StyledMainContainer = styled.main`
   ${({theme}) => theme.mixins.flexCenter};
@@ -29,7 +29,7 @@ const StyledHomeButton = styled(Link)`
 `;
 
 interface NotFoundPageProps {
-  location: WindowLocation;
+  location: PageProps['location'];
 }
 
 const NotFoundPage = ({location}: NotFoundPageProps) => {

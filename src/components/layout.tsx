@@ -1,8 +1,8 @@
 import React, {ReactNode, useEffect, useState} from 'react';
+import type {PageProps} from 'gatsby';
 import styled, {ThemeProvider} from 'styled-components';
 import {Email, Footer, Head, Loader, Nav, Social} from '../components';
 import {GlobalStyle, theme} from '../styles';
-import {WindowLocation} from '@reach/router';
 
 const StyledContent = styled.div`
   display: flex;
@@ -12,7 +12,7 @@ const StyledContent = styled.div`
 
 interface LayoutProps {
   children: ReactNode;
-  location: WindowLocation;
+  location: PageProps['location'];
 }
 
 const Layout = ({children, location}: LayoutProps) => {
@@ -54,7 +54,7 @@ const Layout = ({children, location}: LayoutProps) => {
 
   return (
     <>
-      <Head />
+      <Head pathname={location.pathname} />
 
       <div id="root">
         <ThemeProvider theme={theme}>

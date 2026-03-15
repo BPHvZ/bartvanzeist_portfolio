@@ -1,4 +1,4 @@
-import {createGlobalStyle, ThemeProps} from 'styled-components';
+import {createGlobalStyle} from 'styled-components';
 import fonts from './fonts';
 import variables from './variables';
 import TransitionStyles from './TransitionStyles';
@@ -265,7 +265,7 @@ const GlobalStyle = createGlobalStyle`
     }
 
     &.inline-link {
-      ${({theme}: ThemeProps<any>) => theme.mixins.inlineLink};
+      ${({theme}) => theme.mixins.inlineLink};
     }
   }
 

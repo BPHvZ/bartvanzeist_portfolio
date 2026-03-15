@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import {Helmet} from 'react-helmet';
-import anime from 'animejs';
+import {createDrawable, createTimeline} from 'animejs';
 import styled from 'styled-components';
 import {IconLoader} from '../components/icons';
 
@@ -40,43 +40,39 @@ const StyledLoader = styled.div<StyledLoaderProps>`
 `;
 
 interface LoaderProps {
-  finishLoading: Function,
+  finishLoading: () => void,
 }
 
 const Loader = ({finishLoading}: LoaderProps) => {
   const [isMounted, setIsMounted] = useState(false);
 
   const animate = () => {
-    const loader = anime.timeline({
-      complete: () => finishLoading(),
+    const loader = createTimeline({
+      onComplete: () => finishLoading(),
     });
 
     loader
-        .add({
-          targets: '#logo path',
+        .add(createDrawable('#logo path'), {
           delay: 300,
           duration: 1500,
-          easing: 'easeInOutQuart',
-          strokeDashoffset: [anime.setDashoffset, 0],
+          ease: 'inOutQuart',
+          draw: '0 1',
         })
-        .add({
-          targets: '#logo #B',
+        .add('#logo #B', {
           duration: 700,
-          easing: 'easeInOutQuart',
+          ease: 'inOutQuart',
           opacity: 1,
         })
-        .add({
-          targets: '#logo',
+        .add('#logo', {
           delay: 500,
           duration: 300,
-          easing: 'easeInOutQuart',
+          ease: 'inOutQuart',
           opacity: 0,
           scale: 0.1,
         })
-        .add({
-          targets: '.loader',
+        .add('.loader', {
           duration: 200,
-          easing: 'easeInOutQuart',
+          ease: 'inOutQuart',
           opacity: 0,
           zIndex: -1,
         });

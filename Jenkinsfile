@@ -9,9 +9,9 @@ pipeline {
   stages {
     stage('Prepare') {
       steps {
-        nodejs('NodeJS 18.7.0') {
+        nodejs('NodeJS 24.14.0') {
           sh '''corepack enable
-yarn install'''
+yarn install --immutable'''
         }
 
       }
@@ -19,7 +19,7 @@ yarn install'''
 
     stage('Build') {
       steps {
-        nodejs('NodeJS 18.7.0') {
+        nodejs('NodeJS 24.14.0') {
           sh 'yarn run build'
         }
 

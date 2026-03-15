@@ -1,6 +1,5 @@
 import React from 'react';
 import {Helmet} from 'react-helmet';
-import {useLocation} from '@reach/router';
 import {graphql, useStaticQuery} from 'gatsby';
 import {SiteQuery} from '../../graphql-types';
 
@@ -10,11 +9,10 @@ interface HeadProps {
   title?: string;
   description?: string;
   image?: string;
+  pathname: string;
 }
 
-const Head = ({title, description, image}: HeadProps) => {
-  const {pathname} = useLocation();
-
+const Head = ({title, description, image, pathname}: HeadProps) => {
   const {site} = useStaticQuery<SiteQuery>(
       graphql`
       query Site{
