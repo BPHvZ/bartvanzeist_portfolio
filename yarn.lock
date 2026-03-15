@@ -3884,13 +3884,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/lodash@npm:^4.17.24":
-  version: 4.17.24
-  resolution: "@types/lodash@npm:4.17.24"
-  checksum: 10/0f2082565f60f9787eefc046edc38458054512be5a8b3584ef0bad5fd9e85d0ab55ec5a1fbfae1ed6ba015cf1f9e837d5fb4da1f99fc60b8f74b2a46146fb00f
-  languageName: node
-  linkType: hard
-
 "@types/mdast@npm:^3.0.0, @types/mdast@npm:^3.0.3":
   version: 3.0.10
   resolution: "@types/mdast@npm:3.0.10"
@@ -4327,15 +4320,6 @@ __metadata:
     "@typescript-eslint/types": "npm:8.57.0"
     eslint-visitor-keys: "npm:^5.0.0"
   checksum: 10/049edd9e6a5e919bed84bffeefa3d3d944295183feaeb175119c17bcbefa051f10e0e135e4a4dc545c5aa781bd11a276ec5e62fd1211f6692c06a84036b8c4c5
-  languageName: node
-  linkType: hard
-
-"@upstatement/prettier-config@npm:^1.1.0":
-  version: 1.1.0
-  resolution: "@upstatement/prettier-config@npm:1.1.0"
-  dependencies:
-    prettier: "npm:^2.x.x"
-  checksum: 10/5edce6bae1b1625e799a8444f837d6d900027ffa55a3718b998141c82680f5a8d4c8a93fcafd257141f8fa2a18b9156c477e7365b16986621b41516ef55eecc3
   languageName: node
   linkType: hard
 
@@ -5555,7 +5539,6 @@ __metadata:
     "@eslint/eslintrc": "npm:^3.3.1"
     "@types/babel__core": "npm:^7.20.5"
     "@types/gatsby-transformer-remark": "npm:^2.9.4"
-    "@types/lodash": "npm:^4.17.24"
     "@types/node": "npm:^24.12.0"
     "@types/prismjs": "npm:^1.26.6"
     "@types/react": "npm:^19.2.14"
@@ -5564,7 +5547,6 @@ __metadata:
     "@types/scrollreveal": "npm:^0.0.11"
     "@typescript-eslint/eslint-plugin": "npm:^8.57.0"
     "@typescript-eslint/parser": "npm:^8.57.0"
-    "@upstatement/prettier-config": "npm:^1.1.0"
     animejs: "npm:^4.3.6"
     babel-plugin-styled-components: "npm:^2.1.4"
     babel-preset-gatsby: "npm:^3.16.0"
@@ -5590,7 +5572,6 @@ __metadata:
     gatsby-transformer-sharp: "npm:^5.16.0"
     husky: "npm:^9.1.7"
     lint-staged: "npm:^16.4.0"
-    lodash: "npm:^4.17.23"
     prettier: "npm:^3.8.1"
     prismjs: "npm:^1.30.0"
     react: "npm:^19.2.4"
@@ -12309,13 +12290,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"lodash@npm:^4.17.23":
-  version: 4.17.23
-  resolution: "lodash@npm:4.17.23"
-  checksum: 10/82504c88250f58da7a5a4289f57a4f759c44946c005dd232821c7688b5fcfbf4a6268f6a6cdde4b792c91edd2f3b5398c1d2a0998274432cff76def48735e233
-  languageName: node
-  linkType: hard
-
 "log-update@npm:^6.1.0":
   version: 6.1.0
   resolution: "log-update@npm:6.1.0"
@@ -14644,15 +14618,6 @@ __metadata:
   version: 1.2.1
   resolution: "prelude-ls@npm:1.2.1"
   checksum: 10/0b9d2c76801ca652a7f64892dd37b7e3fab149a37d2424920099bf894acccc62abb4424af2155ab36dea8744843060a2d8ddc983518d0b1e22265a22324b72ed
-  languageName: node
-  linkType: hard
-
-"prettier@npm:^2.x.x":
-  version: 2.6.0
-  resolution: "prettier@npm:2.6.0"
-  bin:
-    prettier: bin-prettier.js
-  checksum: 10/bb97f23ba6c99941771bcd5acae7bf34c9050ee19046468715ef6866fa09829652183a4059c6c402d5f68240bcac282b4a709bfba15f280b4c774ff5ea602d50
   languageName: node
   linkType: hard
 
