@@ -39,7 +39,7 @@ const Seo = ({title, description, image, pathname}: SeoProps) => {
 
   return (
     <>
-      <html lang="en" />
+      <html lang="nl" />
 
       <title>{pageTitle}</title>
 

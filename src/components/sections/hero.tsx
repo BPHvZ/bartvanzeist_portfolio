@@ -60,16 +60,16 @@ const Hero = () => {
 
   const one = <h1>Hoi 👋, ik ben</h1>;
   const two = <h2 className="big-heading">Bart van Zeist.</h2>;
-  const three = <h3 className="big-heading">Een full-stack software engineer.</h3>;
+  const three = <h3 className="big-heading">Een software engineer met een focus op iOS.</h3>;
   const four = (
     <>
       <p>
-        Ik ben een software engineer die geïnteresseerd is in moderne technieken voor het bouwen
-        van (web)applicaties en apps. Op dit moment ben ik afstuderende bij{' '}
-        <a href="https://quintor.nl/" target="_blank" rel="noreferrer">
-          Quintor
+        Ik werk sinds september 2022 bij{' '}
+        <a href="https://www.achmea.nl/" target="_blank" rel="noreferrer">
+          Achmea
         </a>
-        .
+        {' '}aan mobiele producten en platformoplossingen. Ik haal energie uit technisch uitdagende
+        vraagstukken, design systems en het samenwerken met teams en stakeholders om ideeën om te zetten in sterke software.
       </p>
     </>
   );

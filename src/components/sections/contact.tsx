@@ -60,8 +60,9 @@ const Contact = () => {
       <h2 className="title">Stuur een berichtje</h2>
 
       <p>
-        Op dit moment sta ik open voor nieuwe ervaringen en ben ik op zoek naar mijn eerst baan na mijn afstuderen.
-        Stuur en berichtje en laten we kijken of we iets voor elkaar kunnen betekenen.
+        Ik werk met veel plezier aan mobiele producten en platformoplossingen, en ik kom altijd graag in contact
+        met mensen die willen sparren over software, iOS of ontwikkelervaring. Stuur gerust een berichtje,
+        dan kijken we of we iets voor elkaar kunnen betekenen.
       </p>
 
       <a className="email-link" href={`mailto:${email}`}>

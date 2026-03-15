@@ -170,6 +170,17 @@ const StyledTabPanel = styled.div`
     font-family: var(--font-mono);
     font-size: var(--fz-xs);
   }
+
+  .gatsby-resp-image-wrapper {
+    ${({theme}) => theme.mixins.boxShadow};
+    margin-top: 30px !important;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+  }
+
+  img {
+    border-radius: var(--border-radius);
+  }
 `;
 
 const Jobs = () => {

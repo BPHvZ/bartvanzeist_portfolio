@@ -126,7 +126,7 @@ const About = () => {
     sr?.reveal(revealContainer.current!, srConfig());
   }, []);
 
-  const skills = ['TypeScript', 'React', 'Angular', 'Microsoft Azure', 'Spring Boot', 'Flutter'];
+  const skills = ['Swift', 'SwiftUI', 'iOS', 'Design Systems', 'Kotlin', 'Tooling'];
 
   return (
     <StyledAboutSection id="about" ref={revealContainer}>
@@ -136,23 +136,27 @@ const About = () => {
         <StyledText>
           <div>
             <p>
-              Hoi! Ik ben Bart en vind het leuk om apps en websites te bouwen.
-              Ik ben leergierig en gebruik graag de nieuwste en modernste technieken.
-              Mijn interesse voor software ontwikkeling begon op de middelbare school.
-              Tijdens deze tijd heb ik mijzelf (iOS) apps leren maken met Swift en later met Flutter.
-              Deze kennis heb ik tijdens mijn studie aangevuld met een hoop anderen tools, technieken en werkmethodes.
+              Hoi! Ik ben Bart en ik bouw graag software die technisch sterk in elkaar zit en prettig is om te gebruiken.
+              Mijn interesse voor softwareontwikkeling begon op de middelbare school, waar ik mijzelf apps leerde maken met Swift.
+              Sindsdien ben ik mij blijven verdiepen in mobiele ontwikkeling, architectuur en het slimmer maken van de ontwikkelervaring.
             </p>
 
             <p>
-              Tijdens mijn studie heb ik onder andere projecten gedaan voor{' '}
-              <a href="https://www.pinkroccade-healthcare.nl/">PinkRoccade Healthcare</a>,{' '}
-              <a href="https://www.zwolle.nl/">Gemeente Zwolle</a>{' '}en{' '}
-              <a href="https://quintor.nl/">Quintor</a>.{' '}
-              Tijdens deze projecten heb ik in teams kunnen werken aan proof-of-concepts en MVP&apos;s.
-              Hierin heb ik tools en technieken gebruikt zoals Angular, machine learning, Microsoft Azure en scrum.
+              Sinds september 2022 werk ik bij{' '}
+              <a href="https://www.achmea.nl/">Achmea</a>, waar ik aan iOS-applicaties en platformoplossingen bouw.
+              Daar combineer ik technische diepgang met samenwerken: van refactors, releases en incidenten tot het begeleiden van collega&apos;s,
+              het delen van kennis en het afstemmen met stakeholders.
             </p>
 
-            <p>Hier zijn een aantal technieken waar ik de afgelopen tijd mee heb gewerkt:</p>
+            <p>
+              Daarvoor heb ik tijdens mijn studie onder andere gewerkt voor{' '}
+              <a href="https://www.pinkroccade-healthcare.nl/">PinkRoccade Healthcare</a>,{' '}
+              <a href="https://www.zwolle.nl/">Gemeente Zwolle</a>{' '}en{' '}
+              <a href="https://quintor.nl/">Quintor</a>. Ik werk graag aan uitdagende systemen waar techniek,
+              product en samenwerking samenkomen.
+            </p>
+
+            <p>Hier zijn een aantal technieken en thema&apos;s waar ik de afgelopen tijd veel mee bezig ben geweest:</p>
           </div>
 
           <ul className="skills-list">
@@ -164,10 +168,12 @@ const About = () => {
           <div className="wrapper">
             <StaticImage
               className="img"
-              src="../../images/me.jpg"
+              src="../../images/me-achmea.jpg"
               width={500}
+              height={625}
               quality={95}
               formats={['auto', 'webp', 'avif']}
+              imgStyle={{objectFit: 'cover', objectPosition: 'center top'}}
               alt="Headshot"
             />
           </div>
