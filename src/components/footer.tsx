@@ -1,7 +1,7 @@
-import React, {useEffect, useState} from 'react';
+import React from 'react';
 import styled from 'styled-components';
-import {Icon} from '../components/icons';
 import {socialMedia} from '../config';
+import {Icon} from '../components/icons';
 
 const StyledFooter = styled.footer`
   ${({theme}) => theme.mixins.flexCenter};
@@ -50,87 +50,28 @@ const StyledCredit = styled.div`
   a {
     padding: 10px;
   }
-
-  .github-stats {
-    margin-top: 10px;
-
-    & > span {
-      display: inline-flex;
-      align-items: center;
-      margin: 0 7px;
-    }
-    svg {
-      display: inline-block;
-      margin-right: 5px;
-      width: 14px;
-      height: 14px;
-    }
-  }
 `;
 
-interface GitHubRepoResponse {
-  stargazers_count: number;
-  forks_count: number;
-}
+const Footer = () => (
+  <StyledFooter>
+    <StyledSocialLinks>
+      <ul>
+        {socialMedia &&
+          socialMedia.map(({name, url}, i) => (
+            <li key={i}>
+              <a href={url} aria-label={name}>
+                <Icon name={name} />
+              </a>
+            </li>
+          ))}
+      </ul>
+    </StyledSocialLinks>
 
-const Footer = () => {
-  const [githubInfo, setGitHubInfo] = useState<GitHubRepoResponse>({
-    stargazers_count: 0,
-    forks_count: 0,
-  });
-
-  useEffect(() => {
-    if (process.env.NODE_ENV !== 'production') {
-      return;
-    }
-    fetch('https://api.github.com/repos/BPHvZ/bartvanzeist_portfolio')
-        .then((response) => response.json())
-        .then((data: GitHubRepoResponse) => {
-          setGitHubInfo({
-            stargazers_count: data.stargazers_count,
-            forks_count: data.forks_count,
-          });
-        })
-        .catch((e) => console.error(e));
-  }, []);
-
-  return (
-    <StyledFooter>
-      <StyledSocialLinks>
-        <ul>
-          {socialMedia &&
-            socialMedia.map(({name, url}, i) => (
-              <li key={i}>
-                <a href={url} aria-label={name}>
-                  <Icon name={name} />
-                </a>
-              </li>
-            ))}
-        </ul>
-      </StyledSocialLinks>
-
-      <StyledCredit tabIndex={-1}>
-        <a href="https://github.com/BPHvZ/bartvanzeist_portfolio">
-          <div>Gemaakt door Bart van Zeist</div>
-
-          {githubInfo.stargazers_count > 0 || githubInfo.forks_count > 0 && (
-            <div className="github-stats">
-              <span>
-                <Icon name="Star" />
-                <span>{githubInfo.stargazers_count.toLocaleString()} Stars</span>
-              </span>
-              <span>
-                <Icon name="Fork" />
-                <span>{githubInfo.forks_count.toLocaleString()} Forks</span>
-              </span>
-            </div>
-          )}
-        </a>
-        <a href="https://github.com/bchiang7/v4">
-          <div>Forked van Brittany Chiang</div>
-        </a>
-      </StyledCredit>
-    </StyledFooter>
-  );
-};
+    <StyledCredit tabIndex={-1}>
+      <a href="https://github.com/BPHvZ/bartvanzeist_portfolio" target="_blank" rel="noreferrer">
+        Gemaakt door Bart van Zeist
+      </a>
+    </StyledCredit>
+  </StyledFooter>
+);
 export default Footer;

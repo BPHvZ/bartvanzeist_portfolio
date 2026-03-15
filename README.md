@@ -1,8 +1,6 @@
 # Bart van Zeist - portfolio
 
-Forked van [bchiang7/v4](https://github.com/bchiang7/v4)
-
-Built with Gatsby 5, React 19, TypeScript 5, and styled-components 6.
+Built with Gatsby 5, React 18, TypeScript 5, and styled-components 6.
 
 ## Requirements
 

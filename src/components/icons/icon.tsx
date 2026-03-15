@@ -3,13 +3,11 @@ import {
   IconAppStore,
   IconExternal,
   IconFolder,
-  IconFork,
   IconGitHub,
   IconLinkedin,
   IconLoader,
   IconLogo,
   IconPlayStore,
-  IconStar,
 } from '../../components/icons';
 
 interface NameProps {
@@ -24,8 +22,6 @@ const Icon = ({name}: NameProps): ReactElement => {
       return <IconExternal />;
     case 'Folder':
       return <IconFolder />;
-    case 'Fork':
-      return <IconFork />;
     case 'GitHub':
       return <IconGitHub />;
     case 'Linkedin':
@@ -36,8 +32,6 @@ const Icon = ({name}: NameProps): ReactElement => {
       return <IconLogo />;
     case 'PlayStore':
       return <IconPlayStore />;
-    case 'Star':
-      return <IconStar />;
     default:
       return <IconExternal />;
   }
