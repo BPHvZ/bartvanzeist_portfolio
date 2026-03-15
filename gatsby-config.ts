@@ -2,6 +2,13 @@ import path from 'path';
 import {colors} from './src/config';
 
 module.exports = {
+  graphqlTypegen: {
+    generateOnBuild: true,
+    typesOutputPath: 'src/gatsby-types.d.ts',
+    documentSearchPaths: [
+      './src/**/*.{ts,tsx}',
+    ],
+  },
   siteMetadata: {
     title: 'Bart van Zeist',
     description:
@@ -10,21 +17,12 @@ module.exports = {
     image: '/og.png',
   },
   plugins: [
-    'gatsby-plugin-react-helmet',
     'gatsby-plugin-styled-components',
     'gatsby-plugin-image',
     'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',
     'gatsby-plugin-sitemap',
     'gatsby-plugin-robots-txt',
-    {
-      resolve: `gatsby-plugin-graphql-codegen`,
-      options: {
-        documentPaths: [
-          './src/**/*.{ts,tsx}',
-        ],
-      },
-    },
     {
       resolve: 'gatsby-plugin-manifest',
       options: {

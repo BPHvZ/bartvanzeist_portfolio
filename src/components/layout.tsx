@@ -1,7 +1,7 @@
 import React, {ReactNode, useEffect, useState} from 'react';
 import type {PageProps} from 'gatsby';
 import styled, {ThemeProvider} from 'styled-components';
-import {Email, Footer, Head, Loader, Nav, Social} from '../components';
+import {Email, Footer, Loader, Nav, Social} from '../components';
 import {GlobalStyle, theme} from '../styles';
 
 const StyledContent = styled.div`
@@ -54,8 +54,6 @@ const Layout = ({children, location}: LayoutProps) => {
 
   return (
     <>
-      <Head pathname={location.pathname} />
-
       <div id="root">
         <ThemeProvider theme={theme}>
           <GlobalStyle />

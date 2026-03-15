@@ -6,7 +6,6 @@ import {srConfig} from '../../config';
 import sr from '../../utils/sr';
 import {Icon} from '../../components/icons';
 import {usePrefersReducedMotion} from '../../hooks';
-import {AllProjectsQuery} from '../../../graphql-types';
 
 const StyledProjectsSection = styled.section`
   display: flex;
@@ -166,7 +165,7 @@ const StyledProject = styled.li`
 `;
 
 const Projects = () => {
-  const data = useStaticQuery<AllProjectsQuery>(graphql`
+  const data = useStaticQuery<Queries.AllProjectsQuery>(graphql`
     query AllProjects {
       projects: allMarkdownRemark(
         filter: {
@@ -210,7 +209,7 @@ const Projects = () => {
   const firstSix = projects.slice(0, GRID_LIMIT);
   const projectsToShow = showMore ? projects : firstSix;
 
-  const projectInner = (node: AllProjectsQuery['projects']['edges'][0]['node']) => {
+  const projectInner = (node: Queries.AllProjectsQuery['projects']['edges'][0]['node']) => {
     const {frontmatter, html} = node;
     const {github, external, title, tech} = frontmatter!;
 

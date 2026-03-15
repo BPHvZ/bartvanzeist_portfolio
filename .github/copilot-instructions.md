@@ -29,9 +29,9 @@
 
 ## Conventions
 
-- Do not hand-edit `graphql-types.ts`, `public/`, or `.cache/`; they are generated.
+- Do not hand-edit `src/gatsby-types.d.ts`, `public/`, or `.cache/`; they are generated.
 - Avoid touching `.yarn/cache` unless the task is explicitly about dependencies or Yarn state.
-- When GraphQL queries change, rely on Gatsby code generation to refresh `graphql-types.ts` instead of patching generated types manually.
+- When GraphQL queries change, rely on Gatsby built-in type generation to refresh `src/gatsby-types.d.ts` instead of patching generated types manually.
 - If you introduce browser-only libraries, keep Gatsby SSR in mind and update [gatsby-node.ts](../gatsby-node.ts) if HTML builds need null-loader exceptions.
 - When adding, removing, or reordering homepage sections, keep [src/pages/index.tsx](../src/pages/index.tsx), [src/components/index.tsx](../src/components/index.tsx), and the navigation entries in [src/config.ts](../src/config.ts) in sync.
 - For markdown-backed content, preserve the existing frontmatter shapes in [content/featured](../content/featured), [content/jobs](../content/jobs), and [content/projects](../content/projects), and keep assets next to the owning markdown file when that folder pattern already exists.

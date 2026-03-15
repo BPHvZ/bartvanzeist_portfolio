@@ -6,7 +6,6 @@ import {srConfig} from '../../config';
 import {KEY_CODES} from '../../utils';
 import sr from '../../utils/sr';
 import {usePrefersReducedMotion} from '../../hooks';
-import {AllJobsQuery} from '../../../graphql-types';
 
 const StyledJobsSection = styled.section`
   max-width: 700px;
@@ -174,7 +173,7 @@ const StyledTabPanel = styled.div`
 `;
 
 const Jobs = () => {
-  const data = useStaticQuery<AllJobsQuery>(graphql`
+  const data = useStaticQuery<Queries.AllJobsQuery>(graphql`
     query AllJobs {
       jobs: allMarkdownRemark(
         filter: { fileAbsolutePath: { regex: "/jobs/" } }

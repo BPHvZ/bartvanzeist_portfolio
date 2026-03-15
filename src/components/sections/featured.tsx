@@ -6,7 +6,6 @@ import sr from '../../utils/sr';
 import {srConfig} from '../../config';
 import {Icon} from '../../components/icons';
 import {usePrefersReducedMotion} from '../../hooks';
-import {AllFeaturedProjectsQuery} from '../../../graphql-types';
 import {FileNode} from 'gatsby-plugin-image/dist/src/components/hooks';
 
 const StyledProjectsGrid = styled.ul`
@@ -301,7 +300,7 @@ const StyledProject = styled.li`
 `;
 
 const Featured = () => {
-  const data = useStaticQuery<AllFeaturedProjectsQuery>(graphql`
+  const data = useStaticQuery<Queries.AllFeaturedProjectsQuery>(graphql`
     query allFeaturedProjects{
       featured: allMarkdownRemark(
         filter: { fileAbsolutePath: { regex: "/featured/" } }

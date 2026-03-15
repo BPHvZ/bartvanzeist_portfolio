@@ -1,19 +1,17 @@
 import React from 'react';
-import {Helmet} from 'react-helmet';
 import {graphql, useStaticQuery} from 'gatsby';
-import {SiteQuery} from '../../graphql-types';
 
 // https://www.gatsbyjs.com/docs/add-seo-component/
 
-interface HeadProps {
+interface SeoProps {
   title?: string;
   description?: string;
   image?: string;
   pathname: string;
 }
 
-const Head = ({title, description, image, pathname}: HeadProps) => {
-  const {site} = useStaticQuery<SiteQuery>(
+const Seo = ({title, description, image, pathname}: SeoProps) => {
+  const {site} = useStaticQuery<Queries.SiteQuery>(
       graphql`
       query Site{
         site {
@@ -37,9 +35,13 @@ const Head = ({title, description, image, pathname}: HeadProps) => {
     url: `${siteUrl}${pathname}`,
   };
 
+  const pageTitle = title ? `${title} | ${defaultTitle}` : defaultTitle;
+
   return (
-    <Helmet title={title} defaultTitle={seo.title!} titleTemplate={`%s | ${defaultTitle}`}>
+    <>
       <html lang="en" />
+
+      <title>{pageTitle}</title>
 
       <meta name="description" content={seo.description!} />
       <meta name="image" content={seo.image} />
@@ -51,8 +53,8 @@ const Head = ({title, description, image, pathname}: HeadProps) => {
       <meta property="og:type" content="website" />
 
       <meta name="google-site-verification" content="tagqXribcJ762w1pjRWqndS93DRjkg-FpaG8-_JaZ70" />
-    </Helmet>
+    </>
   );
 };
 
-export default Head;
+export default Seo;

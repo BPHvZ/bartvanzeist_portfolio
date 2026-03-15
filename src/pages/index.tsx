@@ -1,7 +1,7 @@
 import React from 'react';
 import type {PageProps} from 'gatsby';
 import styled from 'styled-components';
-import {About, Contact, Featured, Hero, Jobs, Layout, Projects} from '../components';
+import {About, Contact, Featured, Hero, Jobs, Layout, Projects, Seo} from '../components';
 
 const StyledMainContainer = styled.main`
   counter-reset: section;
@@ -25,3 +25,5 @@ const IndexPage = ({location}: IndexPageProps) => (
 );
 
 export default IndexPage;
+
+export const Head = ({location}: PageProps) => <Seo pathname={location.pathname} />;
