@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect, useRef, useState} from 'react';
 import type {PageProps} from 'gatsby';
 import {Link} from 'gatsby';
 import {CSSTransition, TransitionGroup} from 'react-transition-group';
@@ -33,6 +33,7 @@ interface NotFoundPageProps {
 const NotFoundPage = ({location}: NotFoundPageProps) => {
   const [isMounted, setIsMounted] = useState(false);
   const prefersReducedMotion = usePrefersReducedMotion();
+  const contentRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
     if (prefersReducedMotion) {
@@ -44,7 +45,7 @@ const NotFoundPage = ({location}: NotFoundPageProps) => {
   }, []);
 
   const content = (
-    <StyledMainContainer className="fillHeight">
+    <StyledMainContainer ref={contentRef} className="fillHeight">
       <StyledTitle>404</StyledTitle>
       <StyledSubtitle>Page Not Found</StyledSubtitle>
       <StyledHomeButton to="/">Go Home</StyledHomeButton>
@@ -58,7 +59,7 @@ const NotFoundPage = ({location}: NotFoundPageProps) => {
       ) : (
         <TransitionGroup component={null}>
           {isMounted && (
-            <CSSTransition timeout={500} classNames="fadeup">
+            <CSSTransition nodeRef={contentRef} timeout={500} classNames="fadeup">
               {content}
             </CSSTransition>
           )}

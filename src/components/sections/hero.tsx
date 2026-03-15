@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect, useRef, useState} from 'react';
 import {CSSTransition, TransitionGroup} from 'react-transition-group';
 import styled from 'styled-components';
 import {loaderDelay, navDelay} from '../../utils';
@@ -78,6 +78,7 @@ const Hero = () => {
   );
 
   const items = [one, two, three, four, five];
+  const itemRefs = useRef(items.map(() => React.createRef<HTMLDivElement>()));
 
   return (
     <StyledHeroSection>
@@ -90,11 +91,15 @@ const Hero = () => {
       ) : (
         <TransitionGroup component={null}>
           {isMounted &&
-            items.map((item, i) => (
-              <CSSTransition key={i} classNames="fadeup" timeout={loaderDelay}>
-                <div style={{transitionDelay: `${i + 1}00ms`}}>{item}</div>
-              </CSSTransition>
-            ))}
+            items.map((item, i) => {
+              const nodeRef = itemRefs.current[i];
+
+              return (
+                <CSSTransition key={i} nodeRef={nodeRef} classNames="fadeup" timeout={loaderDelay}>
+                  <div ref={nodeRef} style={{transitionDelay: `${i + 1}00ms`}}>{item}</div>
+                </CSSTransition>
+              );
+            })}
         </TransitionGroup>
       )}
     </StyledHeroSection>

@@ -189,10 +189,11 @@ const Projects = () => {
     }
   `);
 
+  const projects = data.projects.edges.filter(({node}) => node);
   const [showMore, setShowMore] = useState(false);
   const revealTitle = useRef<HTMLHeadingElement>(null);
   const revealArchiveLink = useRef(null);
-  const revealProjects = useRef<HTMLLIElement[]>([]);
+  const revealProjects = useRef(projects.map(() => React.createRef<HTMLLIElement>()));
   const prefersReducedMotion = usePrefersReducedMotion();
 
   useEffect(() => {
@@ -201,11 +202,14 @@ const Projects = () => {
     }
     sr?.reveal(revealTitle.current!, srConfig());
     sr?.reveal(revealArchiveLink.current!, srConfig());
-    revealProjects.current.forEach((ref, i) => sr?.reveal(ref, srConfig(i * 100)));
+    revealProjects.current.forEach((ref, i) => {
+      if (ref.current) {
+        sr?.reveal(ref.current, srConfig(i * 100));
+      }
+    });
   }, []);
 
   const GRID_LIMIT = 6;
-  const projects = data.projects.edges.filter(({node}) => node);
   const firstSix = projects.slice(0, GRID_LIMIT);
   const projectsToShow = showMore ? projects : firstSix;
 
@@ -281,24 +285,29 @@ const Projects = () => {
         ) : (
           <TransitionGroup component={null}>
             {projectsToShow &&
-              projectsToShow.map(({node}, i) => (
-                <CSSTransition
-                  key={i}
-                  classNames="fadeup"
-                  timeout={i >= GRID_LIMIT ? (i - GRID_LIMIT) * 300 : 300}
-                  exit={false}
-                >
-                  <StyledProject
+              projectsToShow.map(({node}, i) => {
+                const nodeRef = revealProjects.current[i];
+
+                return (
+                  <CSSTransition
                     key={i}
-                    ref={(el) => (revealProjects.current[i] = el!)}
-                    style={{
-                      transitionDelay: `${i >= GRID_LIMIT ? (i - GRID_LIMIT) * 100 : 0}ms`,
-                    }}
+                    nodeRef={nodeRef}
+                    classNames="fadeup"
+                    timeout={i >= GRID_LIMIT ? (i - GRID_LIMIT) * 300 : 300}
+                    exit={false}
                   >
-                    {projectInner(node)}
-                  </StyledProject>
-                </CSSTransition>
-              ))}
+                    <StyledProject
+                      key={i}
+                      ref={nodeRef}
+                      style={{
+                        transitionDelay: `${i >= GRID_LIMIT ? (i - GRID_LIMIT) * 100 : 0}ms`,
+                      }}
+                    >
+                      {projectInner(node)}
+                    </StyledProject>
+                  </CSSTransition>
+                );
+              })}
           </TransitionGroup>
         )}
       </ul>

@@ -1,5 +1,5 @@
 import path from 'path';
-import {colors} from './src/config';
+import { colors } from './src/config';
 
 module.exports = {
   graphqlTypegen: {
