@@ -15,7 +15,7 @@ export const navLinks = [
     url: '/#about',
   },
   {
-    name: 'Ervaring',
+    name: 'Werkervaring',
     url: '/#jobs',
   },
   {

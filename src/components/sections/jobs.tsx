@@ -7,8 +7,18 @@ import {KEY_CODES} from '../../utils';
 import sr from '../../utils/sr';
 import {usePrefersReducedMotion} from '../../hooks';
 
-const StyledJobsSection = styled.section`
+const StyledExperienceSection = styled.section`
   max-width: 700px;
+
+  & + & {
+    margin-top: 100px;
+  }
+
+  .section-intro {
+    max-width: 560px;
+    margin: 0 0 30px;
+    color: var(--light-slate);
+  }
 
   .inner {
     display: flex;
@@ -23,6 +33,39 @@ const StyledJobsSection = styled.section`
     }
   }
 `;
+
+type ExperienceType = 'study' | 'work';
+
+interface ExperienceFrontmatter {
+  title?: string | null;
+  company?: string | null;
+  range?: string | null;
+  url?: string | null;
+  experienceType?: ExperienceType | null;
+}
+
+interface ExperienceNode {
+  frontmatter?: ExperienceFrontmatter | null;
+  html?: string | null;
+}
+
+interface ExperienceEdge {
+  node: ExperienceNode;
+}
+
+interface ExperienceQueryResult {
+  jobs: {
+    edges: ExperienceEdge[];
+  };
+}
+
+interface ExperienceTabsProps {
+  sectionId: string;
+  heading: string;
+  intro: string;
+  ariaLabel: string;
+  items: ExperienceEdge[];
+}
 
 const StyledTabList = styled.div`
   position: relative;
@@ -183,35 +226,11 @@ const StyledTabPanel = styled.div`
   }
 `;
 
-const Jobs = () => {
-  const data = useStaticQuery<Queries.AllJobsQuery>(graphql`
-    query AllJobs {
-      jobs: allMarkdownRemark(
-        filter: { fileAbsolutePath: { regex: "/jobs/" } }
-        sort: { frontmatter: { date: DESC } }
-      ) {
-        edges {
-          node {
-            frontmatter {
-              title
-              company
-              location
-              range
-              url
-            }
-            html
-          }
-        }
-      }
-    }
-  `);
-
-  const jobsData = data.jobs.edges;
-
+const ExperienceTabs = ({sectionId, heading, intro, ariaLabel, items}: ExperienceTabsProps) => {
   const [activeTabId, setActiveTabId] = useState(0);
   const [tabFocus, setTabFocus] = useState<number>(0);
-  const tabs = useRef<HTMLButtonElement[]>([]);
-  const panelRefs = useRef(jobsData.map(() => React.createRef<HTMLDivElement>()));
+  const tabs = useRef<Array<HTMLButtonElement | null>>([]);
+  const panelRefs = useRef(items.map(() => React.createRef<HTMLDivElement>()));
   const revealContainer = useRef<HTMLElement>(null);
   const prefersReducedMotion = usePrefersReducedMotion();
 
@@ -221,11 +240,11 @@ const Jobs = () => {
     }
 
     sr?.reveal(revealContainer.current!, srConfig());
-  }, []);
+  }, [prefersReducedMotion]);
 
   const focusTab = () => {
     if (tabs.current[tabFocus]) {
-      tabs.current[tabFocus].focus();
+      tabs.current[tabFocus]?.focus();
       return;
     }
     // If we're at the end, go to the start
@@ -262,77 +281,134 @@ const Jobs = () => {
     }
   };
 
+  if (items.length === 0) {
+    return null;
+  }
+
   return (
-    <StyledJobsSection id="jobs" ref={revealContainer}>
-      <h2 className="numbered-heading">Ervaring</h2>
+    <StyledExperienceSection id={sectionId} ref={revealContainer}>
+      <h2 className="numbered-heading">{heading}</h2>
+      <p className="section-intro">{intro}</p>
 
       <div className="inner">
-        <StyledTabList role="tablist" aria-label="Job tabs" onKeyDown={(e) => onKeyDown(e)}>
-          {jobsData &&
-            jobsData.map(({node}, i) => {
-              const {company} = node.frontmatter!;
-              return (
-                <StyledTabButton
-                  key={i}
-                  isActive={activeTabId === i}
-                  onClick={() => setActiveTabId(i)}
-                  ref={(el) => (tabs.current[i] = el!)}
-                  id={`tab-${i}`}
-                  role="tab"
-                  tabIndex={activeTabId === i ? 0 : -1}
-                  aria-selected={activeTabId === i}
-                  aria-controls={`panel-${i}`}
-                >
-                  <span>{company}</span>
-                </StyledTabButton>
-              );
-            })}
+        <StyledTabList role="tablist" aria-label={ariaLabel} onKeyDown={(e) => onKeyDown(e)}>
+          {items.map(({node}, i) => {
+            const company = node.frontmatter?.company ?? `Ervaring ${i + 1}`;
+            const itemId = `${sectionId}-${company}-${i}`;
+
+            return (
+              <StyledTabButton
+                key={itemId}
+                isActive={activeTabId === i}
+                onClick={() => setActiveTabId(i)}
+                ref={(el) => {
+                  tabs.current[i] = el;
+                }}
+                id={`${sectionId}-tab-${i}`}
+                role="tab"
+                tabIndex={activeTabId === i ? 0 : -1}
+                aria-selected={activeTabId === i}
+                aria-controls={`${sectionId}-panel-${i}`}>
+                <span>{company}</span>
+              </StyledTabButton>
+            );
+          })}
           <StyledHighlight activeTabId={activeTabId} />
         </StyledTabList>
 
         <StyledTabPanels>
-          {jobsData &&
-            jobsData.map(({node}, i) => {
-              const {frontmatter, html} = node;
-              const {title, url, company, range} = frontmatter!;
-              const panelRef = panelRefs.current[i];
+          {items.map(({node}, i) => {
+            const {frontmatter, html} = node;
+            const {title, url, company, range} = frontmatter ?? {};
+            const panelRef = panelRefs.current[i];
+            const itemId = `${sectionId}-${company}-${i}`;
 
-              return (
-                <CSSTransition
-                  key={i}
-                  nodeRef={panelRef}
-                  in={activeTabId === i}
-                  timeout={250}
-                  classNames="fade">
-                  <StyledTabPanel
-                    ref={panelRef}
-                    id={`panel-${i}`}
-                    role="tabpanel"
-                    tabIndex={activeTabId === i ? 0 : -1}
-                    aria-labelledby={`tab-${i}`}
-                    aria-hidden={activeTabId !== i}
-                    hidden={activeTabId !== i}
-                  >
-                    <h3>
-                      <span>{title}</span>
-                      <span className="company">
-                        &nbsp;@&nbsp;
-                        <a href={url!} className="inline-link">
-                          {company}
-                        </a>
-                      </span>
-                    </h3>
+            return (
+              <CSSTransition
+                key={itemId}
+                nodeRef={panelRef}
+                in={activeTabId === i}
+                timeout={250}
+                classNames="fade">
+                <StyledTabPanel
+                  ref={panelRef}
+                  id={`${sectionId}-panel-${i}`}
+                  role="tabpanel"
+                  tabIndex={activeTabId === i ? 0 : -1}
+                  aria-labelledby={`${sectionId}-tab-${i}`}
+                  aria-hidden={activeTabId !== i}
+                  hidden={activeTabId !== i}>
+                  <h3>
+                    <span>{title}</span>
+                    <span className="company">
+                      &nbsp;@&nbsp;
+                      <a href={url!} className="inline-link">
+                        {company}
+                      </a>
+                    </span>
+                  </h3>
 
-                    <p className="range">{range}</p>
+                  <p className="range">{range}</p>
 
-                    <div dangerouslySetInnerHTML={{__html: html!}} />
-                  </StyledTabPanel>
-                </CSSTransition>
-              );
-            })}
+                  <div dangerouslySetInnerHTML={{__html: html!}} />
+                </StyledTabPanel>
+              </CSSTransition>
+            );
+          })}
         </StyledTabPanels>
       </div>
-    </StyledJobsSection>
+    </StyledExperienceSection>
+  );
+};
+
+const Jobs = () => {
+  const data = useStaticQuery(graphql`
+    query AllJobs {
+      jobs: allMarkdownRemark(
+        filter: { fileAbsolutePath: { regex: "/jobs/" } }
+        sort: { frontmatter: { date: DESC } }
+      ) {
+        edges {
+          node {
+            frontmatter {
+              title
+              company
+              range
+              url
+              experienceType
+            }
+            html
+          }
+        }
+      }
+    }
+  `) as ExperienceQueryResult;
+
+  const jobsData = data.jobs.edges;
+  const workExperience = jobsData.filter(
+      ({node}) => node.frontmatter?.experienceType === 'work',
+  );
+  const studyExperience = jobsData.filter(
+      ({node}) => node.frontmatter?.experienceType === 'study',
+  );
+
+  return (
+    <>
+      <ExperienceTabs
+        sectionId="jobs"
+        heading="Werkervaring"
+        intro="Professionele ervaring uit rollen in loondienst."
+        ariaLabel="Tabs met werkervaring"
+        items={workExperience}
+      />
+      <ExperienceTabs
+        sectionId="study-experience"
+        heading="Studie, stages en projecten"
+        intro="Stages, afstudeerwerk en projecten uit mijn studietijd."
+        ariaLabel="Tabs met studie-ervaring"
+        items={studyExperience}
+      />
+    </>
   );
 };
 

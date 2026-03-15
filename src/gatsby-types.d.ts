@@ -1422,6 +1422,7 @@ type MarkdownRemarkFrontmatter = {
   readonly company: Maybe<Scalars['String']>;
   readonly cover: Maybe<File>;
   readonly date: Maybe<Scalars['String']>;
+  readonly experienceType: Maybe<Scalars['String']>;
   readonly external: Maybe<Scalars['String']>;
   readonly github: Maybe<Scalars['String']>;
   readonly googleplay: Maybe<Scalars['String']>;
@@ -1438,6 +1439,7 @@ type MarkdownRemarkFrontmatterFieldSelector = {
   readonly company: InputMaybe<FieldSelectorEnum>;
   readonly cover: InputMaybe<FileFieldSelector>;
   readonly date: InputMaybe<FieldSelectorEnum>;
+  readonly experienceType: InputMaybe<FieldSelectorEnum>;
   readonly external: InputMaybe<FieldSelectorEnum>;
   readonly github: InputMaybe<FieldSelectorEnum>;
   readonly googleplay: InputMaybe<FieldSelectorEnum>;
@@ -1454,6 +1456,7 @@ type MarkdownRemarkFrontmatterFilterInput = {
   readonly company: InputMaybe<StringQueryOperatorInput>;
   readonly cover: InputMaybe<FileFilterInput>;
   readonly date: InputMaybe<StringQueryOperatorInput>;
+  readonly experienceType: InputMaybe<StringQueryOperatorInput>;
   readonly external: InputMaybe<StringQueryOperatorInput>;
   readonly github: InputMaybe<StringQueryOperatorInput>;
   readonly googleplay: InputMaybe<StringQueryOperatorInput>;
@@ -1470,6 +1473,7 @@ type MarkdownRemarkFrontmatterSortInput = {
   readonly company: InputMaybe<SortOrderEnum>;
   readonly cover: InputMaybe<FileSortInput>;
   readonly date: InputMaybe<SortOrderEnum>;
+  readonly experienceType: InputMaybe<SortOrderEnum>;
   readonly external: InputMaybe<SortOrderEnum>;
   readonly github: InputMaybe<SortOrderEnum>;
   readonly googleplay: InputMaybe<SortOrderEnum>;
@@ -2719,7 +2723,7 @@ type allFeaturedProjectsQuery = { readonly featured: { readonly edges: ReadonlyA
 type AllJobsQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-type AllJobsQuery = { readonly jobs: { readonly edges: ReadonlyArray<{ readonly node: { readonly html: string | null, readonly frontmatter: { readonly title: string | null, readonly company: string | null, readonly location: string | null, readonly range: string | null, readonly url: string | null } | null } }> } };
+type AllJobsQuery = { readonly jobs: { readonly edges: ReadonlyArray<{ readonly node: { readonly html: string | null, readonly frontmatter: { readonly title: string | null, readonly company: string | null, readonly range: string | null, readonly url: string | null, readonly experienceType: string | null } | null } }> } };
 
 type AllProjectsQueryVariables = Exact<{ [key: string]: never; }>;
 

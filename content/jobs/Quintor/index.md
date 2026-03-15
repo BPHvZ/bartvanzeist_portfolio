@@ -1,9 +1,10 @@
 ---
 date: '2022-02-01'
-title: 'Afstudeerder'
+title: 'Afstudeerstage'
 company: 'Quintor'
 location: 'Deventer'
 range: 'Februari 2022 - Augustus 2022'
+experienceType: 'study'
 url: 'https://quintor.nl/'
 ---
 - In mijn 4e studiejaar afgestudeerd bij Quintor.

@@ -1,9 +1,10 @@
 ---
 date: '2020-09-01'
-title: 'Project Quality in Software Development'
+title: 'Studieproject softwarekwaliteit'
 company: 'DEVCake'
 location: 'Deventer'
 range: 'September 2020 - Januari 2021'
+experienceType: 'study'
 url: 'https://www.devcake.nl/home/'
 ---
 - Met 7 medestudenten gewerkt aan een zoekmachine voor (kranten)artikelen die gerelateerd zijn aan specifieke werkgebieden.

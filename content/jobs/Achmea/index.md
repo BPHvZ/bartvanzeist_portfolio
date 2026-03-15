@@ -4,6 +4,7 @@ title: 'iOS Developer'
 company: 'Achmea'
 location: 'Apeldoorn'
 range: 'September 2022 - Nu'
+experienceType: 'work'
 url: 'https://www.achmea.nl/'
 ---
 - Sinds september 2022 werk ik bij Achmea aan iOS-applicaties en platformoplossingen, met veel aandacht voor kwaliteit, onderhoudbaarheid en een goede gebruikerservaring.
