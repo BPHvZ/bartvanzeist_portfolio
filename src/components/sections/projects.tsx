@@ -211,6 +211,7 @@ const Projects = () => {
 
   const GRID_LIMIT = 6;
   const firstSix = projects.slice(0, GRID_LIMIT);
+  const hasMoreProjects = projects.length > GRID_LIMIT;
   const projectsToShow = showMore ? projects : firstSix;
 
   const projectInner = (node: Queries.AllProjectsQuery['projects']['edges'][0]['node']) => {
@@ -312,9 +313,15 @@ const Projects = () => {
         )}
       </ul>
 
-      <button className="more-button" onClick={() => setShowMore(!showMore)}>
-        Laad {showMore ? 'Minder' : 'Meer'}
-      </button>
+      {hasMoreProjects && (
+        <button
+          type="button"
+          className="more-button"
+          onClick={() => setShowMore(!showMore)}
+          aria-expanded={showMore}>
+          Laad {showMore ? 'minder' : 'meer'}
+        </button>
+      )}
     </StyledProjectsSection>
   );
 };
