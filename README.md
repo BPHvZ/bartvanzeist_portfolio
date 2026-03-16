@@ -39,7 +39,7 @@ yarn generate:cv
 
 Use `yarn generate:cv` when you want strict regeneration.
 
-The generator renders the full one-page CV layout from the semantic source in [content/cv/cv.json](content/cv/cv.json), including clickable contact links. Keep [content/cv/reference-page.png](content/cv/reference-page.png) as a visual comparison target when tuning spacing and typography.
+The generator renders the full one-page CV layout from the semantic source in [content/cv/cv.json](content/cv/cv.json), including clickable contact links. The committed output is [static/CV_-_Bart_van_Zeist.pdf](static/CV_-_Bart_van_Zeist.pdf).
 
 For exact typography, the generator embeds `Test Tiempos Headline`, `SF Mono`, and `SF Pro Text` from local file paths. It uses these environment variables first and then falls back to common macOS font locations:
 
