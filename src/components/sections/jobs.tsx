@@ -82,34 +82,15 @@ const StyledTabList = styled.div`
   @media (max-width: 600px) {
     display: flex;
     overflow-x: auto;
-    width: calc(100% + 100px);
-    padding-left: 50px;
-    margin-left: -50px;
-    margin-bottom: 30px;
+    width: auto;
+    margin: 0 -50px 30px;
+    padding: 0 50px 2px;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x proximity;
   }
   @media (max-width: 480px) {
-    width: calc(100% + 50px);
-    padding-left: 25px;
-    margin-left: -25px;
-  }
-
-  li {
-    &:first-of-type {
-      @media (max-width: 600px) {
-        margin-left: 50px;
-      }
-      @media (max-width: 480px) {
-        margin-left: 25px;
-      }
-    }
-    &:last-of-type {
-      @media (max-width: 600px) {
-        padding-right: 50px;
-      }
-      @media (max-width: 480px) {
-        padding-right: 25px;
-      }
-    }
+    margin: 0 -25px 30px;
+    padding: 0 25px 2px;
   }
 `;
 
@@ -137,11 +118,15 @@ const StyledTabButton = styled.button<StyledTabButtonProps>`
   }
   @media (max-width: 600px) {
     ${({theme}) => theme.mixins.flexCenter};
-    min-width: 120px;
-    padding: 0 15px;
+    flex: 0 0 auto;
+    width: auto;
+    min-width: 0;
+    padding: 0 20px;
     border-left: 0;
     border-bottom: 2px solid var(--oxford-blue-lightest);
+    border-bottom-color: ${({isActive}) => (isActive ? 'var(--radical-red)' : 'var(--oxford-blue-lightest)')};
     text-align: center;
+    scroll-snap-align: start;
   }
 
   &:hover,
@@ -168,16 +153,7 @@ const StyledHighlight = styled.div<StyledHighlightProps>`
   transition-delay: 0.1s;
 
   @media (max-width: 600px) {
-    top: auto;
-    bottom: 0;
-    width: 100%;
-    max-width: var(--tab-width);
-    height: 2px;
-    margin-left: 50px;
-    transform: translateX(calc(${({activeTabId}) => activeTabId} * var(--tab-width)));
-  }
-  @media (max-width: 480px) {
-    margin-left: 25px;
+    display: none;
   }
 `;
 
@@ -314,6 +290,18 @@ const ExperienceTabs = ({sectionId, heading, intro, ariaLabel, items}: Experienc
 
   // Only re-run the effect if tabFocus changes
   useEffect(() => focusTab(), [tabFocus]);
+
+  useEffect(() => {
+    if (typeof window === 'undefined' || window.innerWidth > 600) {
+      return;
+    }
+
+    tabs.current[activeTabId]?.scrollIntoView({
+      behavior: prefersReducedMotion ? 'auto' : 'smooth',
+      block: 'nearest',
+      inline: 'center',
+    });
+  }, [activeTabId, prefersReducedMotion]);
 
   // Focus on tabs when using up & down arrow keys
   const onKeyDown = (e: React.KeyboardEvent) => {
