@@ -47,7 +47,19 @@ yarn run build'''
         branch 'main'
       }
       steps {
-        ftpPublisher alwaysPublishFromMaster: false, continueOnError: false, failOnError: false, paramPublish: [parameterName: ''], masterNodeName: 'master', publishers: [[configName: 'bartvanzeist.nl', transfers: [[asciiMode: false, cleanRemote: true, excludes: '', flatten: false, makeEmptyDirs: false, noDefaultExcludes: false, patternSeparator: '[, ]+', remoteDirectory: 'httpdocs', remoteDirectorySDF: false, removePrefix: 'public', sourceFiles: 'public/']], usePromotionTimestamp: false, useWorkspaceInPromotion: false, verbose: false]]
+        sshPublisher alwaysPublishFromMaster: false, continueOnError: false, failOnError: true, publishers: [[configName: 'bartvanzeist.nl', transfers: [[cleanRemote: true, excludes: '', flatten: false, makeEmptyDirs: false, noDefaultExcludes: false, patternSeparator: '[, ]+', remoteDirectory: '.deploy-bartvanzeist/release', remoteDirectorySDF: false, removePrefix: 'public', sourceFiles: 'public/**'], [execCommand: '''set -e
+rm -rf 'httpdocs.previous'
+if [ -d 'httpdocs' ]; then
+  mv 'httpdocs' 'httpdocs.previous'
+fi
+if mv '.deploy-bartvanzeist/release' 'httpdocs'; then
+  rm -rf '.deploy-bartvanzeist' 'httpdocs.previous'
+else
+  if [ -d 'httpdocs.previous' ]; then
+    mv 'httpdocs.previous' 'httpdocs'
+  fi
+  exit 1
+fi''', execTimeout: 120000, excludes: '', flatten: false, makeEmptyDirs: false, noDefaultExcludes: false, patternSeparator: '[, ]+', remoteDirectory: '.', remoteDirectorySDF: false, removePrefix: '', sourceFiles: '']], usePromotionTimestamp: false, useWorkspaceInPromotion: false, verbose: false]]
       }
     }
 
