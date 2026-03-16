@@ -1,10 +1,10 @@
 {
     "metadata": {
-        "title": "Bart van Zeist CV",
+        "title": "Bart van Zeist | iOS Developer",
         "subject": "Curriculum Vitae",
         "author": "Bart van Zeist",
         "creator": "QuestPDF build-time generator",
-        "keywords": "cv, resume, bart van zeist, software engineer"
+        "keywords": "cv, resume, bart van zeist, ios developer, swiftui, design systems"
     },
     "theme": {
         "pageBackgroundColor": "#FFFFFF",
@@ -16,7 +16,7 @@
     },
     "header": {
         "name": "Bart van Zeist",
-        "subtitle": "Full-stack Software Engineer",
+        "subtitle": "iOS Developer | SwiftUI, Design Systems & Tooling",
         "photoPath": "content/cv/assets/profile-photo.png",
         "contacts": [
             {
@@ -46,65 +46,45 @@
         ]
     },
     "mainColumn": {
-        "title": "Ervaring",
+        "title": "Werkervaring",
         "items": [
             {
-                "role": "Afstudeerder Software Engineer",
+                "role": "iOS Developer, Multi Design System",
+                "organization": "Achmea",
+                "dateLocation": "Augustus 2024 - Nu // Apeldoorn",
+                "bullets": [
+                    "Binnen het Achmea Multi Design System verantwoordelijk voor de iOS-uitwerking, met SwiftUI-componenten, design tokens en een schaalbare basis voor meerdere platformen en merken.",
+                    "Met stakeholders uit business, IT en product afgestemd hoe het platform wordt ingericht en toegepast, zodat techniek, adoptie en co-creatie op elkaar aansluiten.",
+                    "Tooling ontwikkeld voor het design system, waaronder een Token Validator, en AI-ondersteunde UI-generatie verkend om componenten vanuit requirements sneller op te bouwen.",
+                    "Kennis gedeeld via demo's, presentaties en mentoring, en ontwikkelaars begeleid bij implementatie en adoptie van het design system."
+                ]
+            },
+            {
+                "role": "iOS Developer, Mobiele apps",
+                "organization": "Achmea",
+                "dateLocation": "September 2022 - Augustus 2024 // Apeldoorn",
+                "bullets": [
+                    "Een grote chatrefactor geanalyseerd, opnieuw opgebouwd en zonder incidenten live gebracht, waarmee stabiliteit en onderhoudbaarheid van een kritieke flow sterk zijn verbeterd.",
+                    "Verantwoordelijkheid genomen voor releases, incidenten en hotfixes, inclusief herstelwerk bij storingen met impact op klanten en afstemming met meerdere teams.",
+                    "Deeplinking verbeterd, bestaande implementaties gemoderniseerd en platformcode opgeschoond, met aandacht voor kwaliteit, testbaarheid en een consistente gebruikerservaring.",
+                    "Nearshore ontwikkelaars begeleid bij onboarding, codekwaliteit en implementaties, en actief kennis gedeeld binnen het team."
+                ]
+            },
+            {
+                "role": "Afstudeerstage Software Engineering",
                 "organization": "Quintor",
-                "dateLocation": "Januari 2022 - Nu // Deventer",
+                "dateLocation": "Februari 2022 - Augustus 2022 // Deventer",
                 "bullets": [
-                    "Het maken van een werkplek reserveringssysteem voor intern gebruik.",
-                    "Frontend met Angular (TypeScript) en Tailwind. Backend met Spring Boot (Java) en een PostgreSQL database. Versiebeheer met GitLab.",
-                    "Code quality checks met ESLint, OWASP dependency check en gegenereerde documentatie van comments.",
-                    "CI/CD met statische testen aan de hand van SonarQube en dynamische testen (unit- en integratie). Deployment aan de hand van Docker images en containers."
+                    "Zelfstandig een werkplekreserveringssysteem ontwikkeld met Angular, Spring Boot en PostgreSQL.",
+                    "Requirements opgehaald bij stakeholders en vertaald naar een werkende applicatie met aandacht voor kwaliteit, documentatie en testbaarheid."
                 ]
             },
             {
-                "role": "Stagiair",
+                "role": "Stage Cloud & Webdevelopment",
                 "organization": "PinkRoccade Healthcare",
-                "dateLocation": "September 2021 - Januari 2022 // Apeldoorn",
+                "dateLocation": "April 2020 - Januari 2022 // Apeldoorn",
                 "bullets": [
-                    "Ontwikkelen van een teststrategie en teststraat voor het uitvoeren van unit- en integratietesten op Terraform modules met Microsoft Azure cloud infrastructuur.",
-                    "Meedraaien in het Scrum team van het Cloud Center of Excellence.",
-                    "Testen schrijven met Terraform, Terratest en Go."
-                ]
-            },
-            {
-                "role": "Vrije tijd",
-                "organization": "Tell the DJ",
-                "dateLocation": "Juni 2021 - September 2021",
-                "bullets": [
-                    "Ontwikkelen van een iOS en Android app met Flutter. Gebruikmakend van Dart, Firebase, Push Notifications en Fastlane.",
-                    "Meer leren over het onderhouden en deployen van apps.",
-                    "UI/UX onderzoeken en uitvoeren."
-                ]
-            },
-            {
-                "role": "Project",
-                "organization": "Gemeente Zwolle",
-                "dateLocation": "Mei - Juni 2021 // Zwolle",
-                "bullets": [
-                    "Data science project aan de hand van het CRISP-DM model.",
-                    "Voorspellen van het sentiment op persberichten.",
-                    "Ervaring opgedaan met Python en Natural Language Processing."
-                ]
-            },
-            {
-                "role": "Project",
-                "organization": "DEVCake",
-                "dateLocation": "September 2020 - Januari 2021 // Deventer",
-                "bullets": [
-                    "Een zoekmachine voor (kranten)artikelen maken die gerelateerd zijn aan specifieke werkgebieden.",
-                    "Het trainen van een machine learning model met multiclass classification aan de hand van nu.nl artikelen."
-                ]
-            },
-            {
-                "role": "Project",
-                "organization": "PinkRoccade Healthcare",
-                "dateLocation": "April - Juni 2020 // Apeldoorn",
-                "bullets": [
-                    "Omzetten van een native desktop applicatie voor dietisten naar een Angular webapplicatie en het verbeteren van de UI/UX.",
-                    "Veel geleerd over Angular, TypeScript, Jasmine (unittesten) en UI/UX."
+                    "Ervaring opgedaan met webdevelopment, UI/UX en geautomatiseerd testen van Terraform-modules op Microsoft Azure met Terratest en CI/CD-pipelines."
                 ]
             }
         ]
@@ -112,101 +92,83 @@
     "sidebar": {
         "sections": [
             {
-                "title": "Kennis",
+                "title": "Technische vaardigheden",
                 "groups": [
                     {
-                        "heading": "Programmeertalen",
+                        "heading": "iOS & mobile",
                         "lines": [
-                            "JavaScript, TypeScript, HTML, CSS/",
-                            "Sass, Swift, Node.JS, Python, PHP,",
-                            "SQL, C#, C++, Go, Dart, Java"
+                            "Swift, SwiftUI, UIKit, iOS, Kotlin"
                         ]
                     },
                     {
-                        "heading": "Libraries & Frameworks",
+                        "heading": "Architectuur",
                         "lines": [
-                            "Git, Gulp, Webpack, Prettier, ESLint,",
-                            "Angular, React, Gatsby, Bootstrap,",
-                            "TailwindCSS, RxJS, Scikit-learn,",
-                            "Flutter, Spring Boot"
+                            "Design systems, softwarearchitectuur,",
+                            "componentarchitectuur, schaalbare platformen"
                         ]
                     },
                     {
-                        "heading": "Tools",
+                        "heading": "Tooling",
                         "lines": [
-                            "Jira, GitHub, GitLab, CocoaPods,",
-                            "TeamCity, Bamboo, SonarQube,",
-                            "Microsoft Azure, Docker, MySQL,",
-                            "PostgreSQL, MongoDB, Firebase,",
-                            "Heroku, NPM, Yarn, TensorFlow"
-                        ]
-                    },
-                    {
-                        "heading": "Design",
-                        "lines": [
-                            "Sketch, Figma, Balsamiq"
-                        ]
-                    },
-                    {
-                        "heading": "Talen",
-                        "lines": [
-                            "Nederlands, Engels (Cambridge",
-                            "English C1 Advanced)"
+                            "Token Validator, AI-ondersteunde ontwikkeling,",
+                            "BrowserStack, Fastlane, Git, CI/CD"
                         ]
                     }
                 ]
             },
             {
-                "title": "Opleiding",
+                "title": "Samenwerking & leiderschap",
+                "groups": [
+                    {
+                        "heading": "Stakeholders",
+                        "lines": [
+                            "Stakeholdermanagement, requirementsanalyse,",
+                            "afstemming met design, PO's en development"
+                        ]
+                    },
+                    {
+                        "heading": "Kennisdeling",
+                        "lines": [
+                            "Mentoring, onboarding, demo's,",
+                            "presentaties en inhoudelijke begeleiding"
+                        ]
+                    },
+                    {
+                        "heading": "Werkwijze",
+                        "lines": [
+                            "Eigenaarschap, kwaliteitsbewaking,",
+                            "incidentrespons en proactieve communicatie"
+                        ]
+                    }
+                ]
+            },
+            {
+                "title": "Opleiding & ontwikkeling",
                 "groups": [
                     {
                         "heading": "Windesheim HBO-ICT",
-                        "meta": "2018 - Nu // Zwolle",
+                        "meta": "2018 - 2022 // Zwolle",
                         "lines": [
-                            "Bachelor of Science in Software",
-                            "Engineering"
+                            "Bachelor of Science in Software Engineering"
                         ]
                     },
                     {
-                        "heading": "Walterbosch HAVO",
-                        "meta": "2013 - 2018 // Apeldoorn",
+                        "heading": "Professionele ontwikkeling",
+                        "meta": "2023 - Nu",
                         "lines": [
-                            "HAVO met profielen Natuur en",
-                            "Gezondheid & Natuur en",
-                            "Techniek"
+                            "Stakeholdermanagement, leiderschap,",
+                            "draagvlak creëren, adviesvaardigheden,",
+                            "toegankelijkheid en UI/UX"
                         ]
                     }
                 ]
             },
             {
-                "title": "Projecten",
-                "groups": [
-                    {
-                        "heading": "Tell the DJ",
-                        "lines": [
-                            "Een Flutter app waarmee gebruikers",
-                            "in sessies verzoeknummers kunnen",
-                            "aanvragen via een Spotify integratie.",
-                            "Een DJ kan dit gebruiken om veel",
-                            "gevraagde muziek af te spelen"
-                        ]
-                    },
-                    {
-                        "heading": "Frypto",
-                        "lines": [
-                            "Een Flutter app gemaakt als Havo",
-                            "eindexamenopdracht. Een",
-                            "cryptocurrency portfolio app."
-                        ]
-                    }
-                ]
-            },
-            {
-                "title": "Hobbies",
+                "title": "Talen",
                 "groups": [
                     {
                         "lines": [
-                            "Bakken, koken, Netflixen, wandelen"
+                            "Nederlands, Engels (C1)"
                         ]
                     }
                 ]
