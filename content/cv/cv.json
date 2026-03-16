@@ -54,18 +54,18 @@
                 "dateLocation": "Augustus 2024 - Nu // Apeldoorn",
                 "bullets": [
                     "Binnen het Achmea Multi Design System verantwoordelijk voor de iOS-uitwerking, met SwiftUI-componenten, design tokens en een schaalbare basis voor meerdere platformen en merken.",
-                    "Met stakeholders uit business, IT en product afgestemd hoe het platform wordt ingericht en toegepast, zodat techniek, adoptie en co-creatie op elkaar aansluiten.",
-                    "Tooling ontwikkeld voor het design system, waaronder een Token Validator, en AI-ondersteunde UI-generatie verkend om componenten vanuit requirements sneller op te bouwen.",
+                    "Met stakeholders uit verschillende disciplines in een SAFe-context afgestemd hoe het platform wordt ingericht en toegepast, zodat techniek, adoptie en co-creatie op elkaar aansluiten.",
+                    "Tooling ontwikkeld voor het design system, waaronder een Token Validator, en daarnaast bijgedragen aan DevOps-werkwijzen met GitHub en CI/CD om veranderingen beheersbaar door de keten te laten gaan.",
                     "Kennis gedeeld via demo's, presentaties en mentoring, en ontwikkelaars begeleid bij implementatie en adoptie van het design system."
                 ]
             },
             {
-                "role": "iOS Developer, Mobiele apps",
+                "role": "iOS Developer, Centraal Beheer",
                 "organization": "Achmea",
                 "dateLocation": "September 2022 - Augustus 2024 // Apeldoorn",
                 "bullets": [
                     "Een grote chatrefactor geanalyseerd, opnieuw opgebouwd en zonder incidenten live gebracht, waarmee stabiliteit en onderhoudbaarheid van een kritieke flow sterk zijn verbeterd.",
-                    "Verantwoordelijkheid genomen voor releases, incidenten en hotfixes, inclusief herstelwerk bij storingen met impact op klanten en afstemming met meerdere teams.",
+                    "Het end-to-end releaseproces van de Centraal Beheer-app beheerd, van build en submit tot release, en daarnaast incidenten en hotfixes opgepakt bij storingen met impact op klanten.",
                     "Deeplinking verbeterd, bestaande implementaties gemoderniseerd en platformcode opgeschoond, met aandacht voor kwaliteit, testbaarheid en een consistente gebruikerservaring.",
                     "Nearshore ontwikkelaars begeleid bij onboarding, codekwaliteit en implementaties, en actief kennis gedeeld binnen het team."
                 ]
@@ -97,21 +97,22 @@
                     {
                         "heading": "iOS & mobile",
                         "lines": [
-                            "Swift, SwiftUI, UIKit, iOS, Kotlin"
+                            "Swift, SwiftUI, UIKit, Kotlin"
                         ]
                     },
                     {
                         "heading": "Architectuur",
                         "lines": [
                             "Design systems, softwarearchitectuur,",
-                            "componentarchitectuur, schaalbare platformen"
+                            "componentarchitectuur, schaalbare platformen,",
+                            "requirement driven development"
                         ]
                     },
                     {
                         "heading": "Tooling",
                         "lines": [
-                            "Token Validator, AI-ondersteunde ontwikkeling,",
-                            "BrowserStack, Fastlane, Git, CI/CD"
+                            "Azure DevOps, GitHub,",
+                            "Git, GitHub Copilot, Percy"
                         ]
                     }
                 ]
@@ -122,8 +123,8 @@
                     {
                         "heading": "Stakeholders",
                         "lines": [
-                            "Stakeholdermanagement, requirementsanalyse,",
-                            "afstemming met design, PO's en development"
+                            "Stakeholdermanagement, afstemming met design,",
+                            "PO's, architecten en development"
                         ]
                     },
                     {
@@ -137,7 +138,7 @@
                         "heading": "Werkwijze",
                         "lines": [
                             "Eigenaarschap, kwaliteitsbewaking,",
-                            "incidentrespons en proactieve communicatie"
+                            "incidentafhandeling en proactieve communicatie"
                         ]
                     }
                 ]
