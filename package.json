@@ -16,11 +16,13 @@
     "not dead"
   ],
   "scripts": {
-    "build": "gatsby build",
-    "develop": "gatsby develop",
+    "build": "yarn generate:cv:optional && gatsby build",
+    "develop": "yarn generate:cv:optional && gatsby develop",
     "format": "prettier --write \"**/*.{ts,tsx,json,md}\"",
-    "start": "gatsby develop",
-    "serve": "gatsby clean && gatsby build && gatsby serve",
+    "generate:cv": "sh scripts/run-cv-generator.sh",
+    "generate:cv:optional": "sh scripts/run-cv-generator.sh --allow-existing-output",
+    "start": "yarn generate:cv:optional && gatsby develop",
+    "serve": "yarn generate:cv:optional && gatsby clean && gatsby build && gatsby serve",
     "clean": "gatsby clean",
     "prepare": "husky install",
     "lint-staged": "lint-staged",

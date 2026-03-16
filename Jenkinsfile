@@ -17,10 +17,26 @@ yarn install --immutable'''
       }
     }
 
+    stage('Setup .NET SDK') {
+      steps {
+        sh '''set -e
+DOTNET_DIR="$WORKSPACE/.dotnet"
+INSTALL_SCRIPT="$WORKSPACE/.dotnet-install.sh"
+
+mkdir -p "$DOTNET_DIR"
+
+if [ ! -x "$DOTNET_DIR/dotnet" ]; then
+  curl -fsSL https://dot.net/v1/dotnet-install.sh -o "$INSTALL_SCRIPT"
+  bash "$INSTALL_SCRIPT" --channel 8.0 --install-dir "$DOTNET_DIR"
+fi'''
+      }
+    }
+
     stage('Build') {
       steps {
         nodejs('NodeJS 24.14.0') {
-          sh 'yarn run build'
+          sh '''export PATH="$WORKSPACE/.dotnet:$PATH"
+yarn run build'''
         }
 
       }

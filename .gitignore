@@ -7,10 +7,17 @@ package-lock.json
 # Build directory
 /public
 .DS_Store
-
+.tmp/
+.tmp-cv-compare/
 .vscode/
 
 .idea/
 
 # Yarn PnP
 .yarn/
+
+# .NET build artifacts
+**/bin/
+**/obj/
+.dotnet/
+.dotnet-install.sh

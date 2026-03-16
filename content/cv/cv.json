@@ -1,0 +1,216 @@
+{
+    "metadata": {
+        "title": "Bart van Zeist CV",
+        "subject": "Curriculum Vitae",
+        "author": "Bart van Zeist",
+        "creator": "QuestPDF build-time generator",
+        "keywords": "cv, resume, bart van zeist, software engineer"
+    },
+    "theme": {
+        "pageBackgroundColor": "#FFFFFF",
+        "nameColor": "#20A4F3",
+        "accentColor": "#FF3366",
+        "textPrimaryColor": "#000000",
+        "textMutedColor": "#818181",
+        "textBodyColor": "#636363"
+    },
+    "header": {
+        "name": "Bart van Zeist",
+        "subtitle": "Full-stack Software Engineer",
+        "photoPath": "content/cv/assets/profile-photo.png",
+        "contacts": [
+            {
+                "iconPath": "content/cv/assets/mail.png",
+                "text": "bartvanzeist2000@gmail.com",
+                "url": "mailto:bartvanzeist2000@gmail.com",
+                "underline": true
+            },
+            {
+                "iconPath": "content/cv/assets/phone.png",
+                "text": "06-24543381",
+                "url": "tel:+31624543381",
+                "underline": false
+            },
+            {
+                "iconPath": "content/cv/assets/home.png",
+                "text": "bartvanzeist.nl",
+                "url": "https://bartvanzeist.nl",
+                "underline": true
+            },
+            {
+                "iconPath": "content/cv/assets/github.png",
+                "text": "GitHub.com/BPHvZ",
+                "url": "https://github.com/BPHvZ",
+                "underline": true
+            }
+        ]
+    },
+    "mainColumn": {
+        "title": "Ervaring",
+        "items": [
+            {
+                "role": "Afstudeerder Software Engineer",
+                "organization": "Quintor",
+                "dateLocation": "Januari 2022 - Nu // Deventer",
+                "bullets": [
+                    "Het maken van een werkplek reserveringssysteem voor intern gebruik.",
+                    "Frontend met Angular (TypeScript) en Tailwind. Backend met Spring Boot (Java) en een PostgreSQL database. Versiebeheer met GitLab.",
+                    "Code quality checks met ESLint, OWASP dependency check en gegenereerde documentatie van comments.",
+                    "CI/CD met statische testen aan de hand van SonarQube en dynamische testen (unit- en integratie). Deployment aan de hand van Docker images en containers."
+                ]
+            },
+            {
+                "role": "Stagiair",
+                "organization": "PinkRoccade Healthcare",
+                "dateLocation": "September 2021 - Januari 2022 // Apeldoorn",
+                "bullets": [
+                    "Ontwikkelen van een teststrategie en teststraat voor het uitvoeren van unit- en integratietesten op Terraform modules met Microsoft Azure cloud infrastructuur.",
+                    "Meedraaien in het Scrum team van het Cloud Center of Excellence.",
+                    "Testen schrijven met Terraform, Terratest en Go."
+                ]
+            },
+            {
+                "role": "Vrije tijd",
+                "organization": "Tell the DJ",
+                "dateLocation": "Juni 2021 - September 2021",
+                "bullets": [
+                    "Ontwikkelen van een iOS en Android app met Flutter. Gebruikmakend van Dart, Firebase, Push Notifications en Fastlane.",
+                    "Meer leren over het onderhouden en deployen van apps.",
+                    "UI/UX onderzoeken en uitvoeren."
+                ]
+            },
+            {
+                "role": "Project",
+                "organization": "Gemeente Zwolle",
+                "dateLocation": "Mei - Juni 2021 // Zwolle",
+                "bullets": [
+                    "Data science project aan de hand van het CRISP-DM model.",
+                    "Voorspellen van het sentiment op persberichten.",
+                    "Ervaring opgedaan met Python en Natural Language Processing."
+                ]
+            },
+            {
+                "role": "Project",
+                "organization": "DEVCake",
+                "dateLocation": "September 2020 - Januari 2021 // Deventer",
+                "bullets": [
+                    "Een zoekmachine voor (kranten)artikelen maken die gerelateerd zijn aan specifieke werkgebieden.",
+                    "Het trainen van een machine learning model met multiclass classification aan de hand van nu.nl artikelen."
+                ]
+            },
+            {
+                "role": "Project",
+                "organization": "PinkRoccade Healthcare",
+                "dateLocation": "April - Juni 2020 // Apeldoorn",
+                "bullets": [
+                    "Omzetten van een native desktop applicatie voor dietisten naar een Angular webapplicatie en het verbeteren van de UI/UX.",
+                    "Veel geleerd over Angular, TypeScript, Jasmine (unittesten) en UI/UX."
+                ]
+            }
+        ]
+    },
+    "sidebar": {
+        "sections": [
+            {
+                "title": "Kennis",
+                "groups": [
+                    {
+                        "heading": "Programmeertalen",
+                        "lines": [
+                            "JavaScript, TypeScript, HTML, CSS/",
+                            "Sass, Swift, Node.JS, Python, PHP,",
+                            "SQL, C#, C++, Go, Dart, Java"
+                        ]
+                    },
+                    {
+                        "heading": "Libraries & Frameworks",
+                        "lines": [
+                            "Git, Gulp, Webpack, Prettier, ESLint,",
+                            "Angular, React, Gatsby, Bootstrap,",
+                            "TailwindCSS, RxJS, Scikit-learn,",
+                            "Flutter, Spring Boot"
+                        ]
+                    },
+                    {
+                        "heading": "Tools",
+                        "lines": [
+                            "Jira, GitHub, GitLab, CocoaPods,",
+                            "TeamCity, Bamboo, SonarQube,",
+                            "Microsoft Azure, Docker, MySQL,",
+                            "PostgreSQL, MongoDB, Firebase,",
+                            "Heroku, NPM, Yarn, TensorFlow"
+                        ]
+                    },
+                    {
+                        "heading": "Design",
+                        "lines": [
+                            "Sketch, Figma, Balsamiq"
+                        ]
+                    },
+                    {
+                        "heading": "Talen",
+                        "lines": [
+                            "Nederlands, Engels (Cambridge",
+                            "English C1 Advanced)"
+                        ]
+                    }
+                ]
+            },
+            {
+                "title": "Opleiding",
+                "groups": [
+                    {
+                        "heading": "Windesheim HBO-ICT",
+                        "meta": "2018 - Nu // Zwolle",
+                        "lines": [
+                            "Bachelor of Science in Software",
+                            "Engineering"
+                        ]
+                    },
+                    {
+                        "heading": "Walterbosch HAVO",
+                        "meta": "2013 - 2018 // Apeldoorn",
+                        "lines": [
+                            "HAVO met profielen Natuur en",
+                            "Gezondheid & Natuur en",
+                            "Techniek"
+                        ]
+                    }
+                ]
+            },
+            {
+                "title": "Projecten",
+                "groups": [
+                    {
+                        "heading": "Tell the DJ",
+                        "lines": [
+                            "Een Flutter app waarmee gebruikers",
+                            "in sessies verzoeknummers kunnen",
+                            "aanvragen via een Spotify integratie.",
+                            "Een DJ kan dit gebruiken om veel",
+                            "gevraagde muziek af te spelen"
+                        ]
+                    },
+                    {
+                        "heading": "Frypto",
+                        "lines": [
+                            "Een Flutter app gemaakt als Havo",
+                            "eindexamenopdracht. Een",
+                            "cryptocurrency portfolio app."
+                        ]
+                    }
+                ]
+            },
+            {
+                "title": "Hobbies",
+                "groups": [
+                    {
+                        "lines": [
+                            "Bakken, koken, Netflixen, wandelen"
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}
